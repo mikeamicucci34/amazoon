@@ -7,7 +7,6 @@ import { RECEIVE_CURRENT_USER,
     })
 
 const sessionsReducer = (oldState = _nullState, action) => {
-    Object.freeze(oldState);
     switch(action.type) {
         case RECEIVE_CURRENT_USER:
             return { id: action.currentUser.id} // setting id of the current user to the id of the current user passed in our action creator
