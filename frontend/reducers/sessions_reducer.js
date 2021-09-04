@@ -1,0 +1,21 @@
+import { RECEIVE_CURRENT_USER, 
+    LOGOUT_CURRENT_USER } from "../actions/session_actions";
+
+
+    const _nullState = Object.freeze({
+        id: null
+    })
+
+const sessionsReducer = (oldState = _nullState, action) => {
+    Object.freeze(oldState);
+    switch(action.type) {
+        case RECEIVE_CURRENT_USER:
+            return { id: action.currentUser.id} // setting id of the current user to the id of the current user passed in our action creator
+        case LOGOUT_CURRENT_USER: 
+            return _nullState; // reset our current user id to null when logged out, able to call _nullState to do this
+        default:
+            return oldState; 
+    }
+}
+
+export default sessionsReducer;
