@@ -8,16 +8,18 @@ import {
   HashRouter
 } from 'react-router-dom';
 
+import Header from './header/header';
+import LoginContainer from './'
 import GreetingContainer from "./homepage/greeting_container";
 
 const App = () => (
   <div className="app">
     <header>
-      <h1>Amazoon!</h1>
       <Header/>
     </header>
     <Switch>
-    <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+    {/* <AuthRoute exact path="/login" component={LoginContainer} /> */}
+    {/* <AuthRoute exact path="/signup" component={SignUpContainer} /> */}
     </Switch>
   </div>
 );
