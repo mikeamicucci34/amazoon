@@ -23,7 +23,7 @@ function Header() {
                         className="header__searchInput"/>
             </div>
             <div className="header__nav">
-                <Link to='/login'> 
+                <Link to='/login' style={{ textDecoration: 'none' }}> 
                     <div className="header__option">
                         <span className="header__optionLineOne">
                             Hello, Sign In

@@ -7,7 +7,7 @@ import Login from './login';
 const mSTP = state => ({
     errors: state.errors.session,
     formType: 'Login',
-    navLink: <Link to='/signup'>Create your Amazon Account</Link>
+    navLink: <Link to='/signup' style={{ textDecoration: 'none' }}>Create your Amazon Account</Link>
 })
 
 const mDTP = dispatch => ({
