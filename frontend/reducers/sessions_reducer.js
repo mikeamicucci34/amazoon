@@ -2,11 +2,12 @@ import { RECEIVE_CURRENT_USER,
     LOGOUT_CURRENT_USER } from "../actions/session_actions";
 
 
-    const _nullState = Object.freeze({
+    const _nullUser = Object.freeze({
         id: null
     })
 
-const sessionsReducer = (oldState = _nullState, action) => {
+const sessionsReducer = (oldState = _nullUser, action) => {
+    debugger;
     switch(action.type) {
         case RECEIVE_CURRENT_USER:
             return { id: action.currentUser.id} // setting id of the current user to the id of the current user passed in our action creator

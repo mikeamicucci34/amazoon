@@ -11,6 +11,8 @@ import {
 import Header from './header/header';
 import LoginContainer from './session_form/login_container'
 import SignupContainer from './session_form/signup_container'
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import LogoutContainer from './session_form/logout_container';
 
 
 const App = () => (
@@ -18,7 +20,7 @@ const App = () => (
     <Switch>
       <Route exact path="/login" component={LoginContainer} />
       <Route exact path="/signup" component={SignupContainer} />
-
+      <Route exact path="/logout" component={LogoutContainer} />
       <Route exact path="/">
         <Header/>
       </Route>

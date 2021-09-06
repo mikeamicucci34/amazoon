@@ -19,18 +19,17 @@ export const receiveSessionErrors = (errors) => ({
 })
 
 export const login = (user) => dispatch => (
-    APIUtil.login(user).then((user) => receiveCurrentUser(user),
-    err => dispatch(receiveSessionErrors(err)))
+    APIUtil.login(user).then((user) => dispatch(receiveCurrentUser(user)),
+    err => dispatch(receiveSessionErrors(err.responseJSON)))
 ) // able to dispatch a function on failed promise (ex. receive session errors function)
 
 export const signup = (user) => dispatch => (
-    APIUtil.signup(user).then((user) => receiveCurrentUser(user),
-    err => dispatch(receiveSessionErrors(err)))
+    APIUtil.signup(user).then((user) => dispatch(receiveCurrentUser(user)),
+    err => dispatch(receiveSessionErrors(err.responseJSON)))
 )
 
 export const logout = () => dispatch => (
-    APIUtil.login().then(() => receiveCurrentUser(),
-    err => dispatch(receiveSessionErrors(err)))
+    APIUtil.logout().then((user) => dispatch(logoutCurrentUser()))
 )
 
 
