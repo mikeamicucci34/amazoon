@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Header from '../header/header_container'
+import Product from '../product/product';
 
 export default class Homepage extends React.Component {
     constructor(props) {
@@ -9,10 +11,21 @@ export default class Homepage extends React.Component {
 
     render() {
         return (
-            <div className="Home">
+            <div className="home">
                 <div className="home__container">
-                    <p>this is the home page</p>
-                    <img src="https://m.media-amazon.com/images/I/610o4Ny9RFL._SX3000_.jpg"/>
+                    <div className="header__container"> 
+                        <Header/>
+                    </div>
+                    <div className="homepage__container">
+                        <div className="homepage_containerbackgroundImage">
+                        
+                        </div>
+                        <div className="homepage_containerContents">
+                            <Product/>
+                            <Product/>
+                            <Product/>
+                        </div>
+                    </div>
                 </div>
             </div>
         )

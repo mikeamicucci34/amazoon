@@ -54,7 +54,7 @@ class Login extends React.Component {
                         className='login__logo'
                         src="http://media.corporate-ir.net/media_files/IROL/17/176060/Oct18/Amazon%20logo.PNG"/>
                </Link>
-               <div className="login__errors" hidden>
+               <div className="login__errors">
                    {this.showErrors()}
                 </div>
                     <div className='login__container'>
