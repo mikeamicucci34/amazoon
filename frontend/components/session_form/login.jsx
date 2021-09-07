@@ -10,6 +10,8 @@ class Login extends React.Component {
             password: ''
         }
 
+        this.demoUser = false
+
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
@@ -35,7 +37,16 @@ class Login extends React.Component {
         )
     }
 
-    render() {
+    engageDemoUser() {
+        this.demoUser = true
+        this.setState({
+            email: "demouser@gmail.com",
+            password: "demouser"
+        })
+    }
+
+    render() { 
+
         return(
             <div className="login">
                 <Link to='/'>
@@ -59,6 +70,7 @@ class Login extends React.Component {
                                         onChange={this.action("password")}/>
                                 <button type='submit' className="login__signInButton">Sign-In</button>
                             </form>
+                                <button className="login__signInButton" onClick={() => this.engageDemoUser()}>Demo User</button>
                                 <p>By continuing, you agree to Amazon's Conidtions of Use and Privacy Notice</p>
                             <div className='login__redirect'>
                                 <button className="login__registerButton">{this.props.navLink}</button>

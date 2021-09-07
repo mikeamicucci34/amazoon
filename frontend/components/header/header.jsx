@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import RoomOutlinedIcon from '@material-ui/icons/RoomOutlined';
-
+// import AmazonLogo from '../../../imgs/amazon_logo.png'
 
 class Header extends React.Component {
     constructor(props) {
@@ -24,16 +24,20 @@ class Header extends React.Component {
             <div className='header'>
                 <Link to="/" style={{ textDecoration: 'none' }}> 
                     <div className="header__logo">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSccVRi67YuQqLY1iuA0Kxf6lZv7FVYWgidjT_PfDXDNWVA8U1SDWe4WQYSi-dCeqkvWKY&usqp=CAU"/>
+                        {/* <img src={'../../../imgs/amazon_logo.png'}/> */}
+                        <img src="https://service-client.org/wp-content/uploads/Logo-Amazon-300x144.png"/>
                     </div>
                 </Link>
                 <div className="header__nav">
+                    <span className="header__optionMapIcon">
+                            <RoomOutlinedIcon/>
+                    </span>
                     <div className="header__option">
                         <span className="header__optionLineOne">
-                            Hello
+                            {currentUser ? `Deliver to ${currentUser.username}` : "Hello"}
                         </span>
                         <span className="header__optionLineTwo">
-                            Select your address
+                            {currentUser ? `New York 10002` : "Select your address"}
                         </span>
                     </div>
                 </div>
