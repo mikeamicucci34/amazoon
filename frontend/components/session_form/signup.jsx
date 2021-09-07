@@ -32,13 +32,10 @@ class Signup extends React.Component {
             debugger;
         this.props.signup(filtered)
             .then(() => this.props.history.push("/"))
-
-        // if (this.state.reenter_password !== this.state.password) {
-        //     this.props.errors.push(['Passwords do not match'])
-        // }
     }
 
     showErrors() {
+
         return (
             <ul>
                 {this.props.errors.map(error => (

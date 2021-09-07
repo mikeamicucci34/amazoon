@@ -1,7 +1,9 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import RoomOutlinedIcon from '@material-ui/icons/RoomOutlined';
+
 
 class Header extends React.Component {
     constructor(props) {
@@ -11,6 +13,7 @@ class Header extends React.Component {
     
     render() {
 
+        debugger;
         const { currentUser } = this.props
 
         const linkto = (

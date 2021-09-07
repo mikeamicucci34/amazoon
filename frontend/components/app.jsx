@@ -13,6 +13,7 @@ import LoginContainer from './session_form/login_container'
 import SignupContainer from './session_form/signup_container'
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import LogoutContainer from './session_form/logout_container';
+import HeaderContainer from './header/header_container';
 
 
 const App = () => (
@@ -21,9 +22,7 @@ const App = () => (
       <Route exact path="/login" component={LoginContainer} />
       <Route exact path="/signup" component={SignupContainer} />
       <Route exact path="/logout" component={LogoutContainer} />
-      <Route exact path="/">
-        <Header/>
-      </Route>
+      <Route exact path="/" component={HeaderContainer}/>
     </Switch>
   </div>
 );

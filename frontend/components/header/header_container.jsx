@@ -5,6 +5,10 @@ import Header from './header';
 
 const mSTP = state => ({
     currentUser: state.entities.users[state.session.id]
+});
+
+const mDTP = dispatch => ({
+
 })
 
-export default connect(mSTP, null)(Header);
+export default connect(mSTP, mDTP)(Header);
