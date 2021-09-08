@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { logout } from '../../actions/session_actions';
+import { logout, clearSessionErrors } from '../../actions/session_actions';
 import Logout from './logout';
 import { Link } from 'react-router-dom'
 
@@ -10,7 +10,9 @@ import { Link } from 'react-router-dom'
 // })
 
 const mDTP = dispatch => ({
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    clearSessionErrors: () => dispatch(clearSessionErrors())
 })
+
 
 export default connect(null, mDTP)(Logout)

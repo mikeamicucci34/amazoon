@@ -283,6 +283,16 @@
     margin-bottom: 15px;
 } */
 
+//ERRORS
+
+.login__errors {
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
 // HOMEPAGE
 
 .home {

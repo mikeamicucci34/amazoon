@@ -20,14 +20,12 @@ import HomeContainer from './homepage/home_container';
 
 const App = () => (
   <div className="app">
-    <BrowserRouter>
       <Switch>
-        <Route exact path="/login" component={LoginContainer} />
-        <Route exact path="/signup" component={SignupContainer} />
+        <AuthRoute exact path="/login" component={LoginContainer} />
+        <AuthRoute exact path="/signup" component={SignupContainer} />
         <Route exact path="/logout" component={LogoutContainer} />
         <Route exact path="/" component={HomeContainer}/>
       </Switch>
-    </BrowserRouter>
   </div>
 );
 

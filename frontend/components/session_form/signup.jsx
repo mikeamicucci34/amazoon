@@ -29,19 +29,23 @@ class Signup extends React.Component {
                 obj[key] = this.state[key];
                 return obj;
             }, {});
-            debugger;
+            // debugger;
         this.props.signup(filtered)
             .then(() => this.props.history.push("/"))
+    }
+
+    componentWillUnmount() {
+       this.props.clearSessionErrors();
     }
 
     showErrors() {
 
         return (
-            <ul>
+            <ul className="login__errors"> 
                 {this.props.errors.map(error => (
-                    <li key={shortid.generate()}>
+                    <div key={shortid.generate()}>
                         {error}
-                    </li>
+                    </div>
                 ))}
             </ul>
         )
