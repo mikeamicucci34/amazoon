@@ -26,10 +26,11 @@ export default class Homepage extends React.Component {
                             <Product/>
                             <Product/>
                         </div>
+                        <div className="homepage_footer">
+                            <Footer/>
+                        </div>
                     </div>
-                    <div className="homepage_footer">
-                        <Footer/>
-                    </div>
+                    
                 </div>
             </div>
         )
