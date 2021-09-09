@@ -313,6 +313,7 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    background-size: cover;
 }
 
 .homepage_containerContents {
@@ -320,7 +321,7 @@
     padding-left: 10px;
     padding-right: 10px;
     margin-top: -350px;
-    z-index: 100;
+    // z-index: 100;
     display: flex;
     justify-content: center;
 }
@@ -365,4 +366,18 @@
 
 .product__componentTitle {
     max-width: 400px;
+}
+
+// FOOTER
+
+.footer__component{
+    height: 40px;
+    text-align: center;
+    background-color: #37475a;
+    color: white;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
 }

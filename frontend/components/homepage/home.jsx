@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../header/header_container'
 import Product from '../product/product';
+import Footer from '../footer/footer'
 
 export default class Homepage extends React.Component {
     constructor(props) {
@@ -25,6 +26,9 @@ export default class Homepage extends React.Component {
                             <Product/>
                             <Product/>
                         </div>
+                    </div>
+                    <div className="homepage_footer">
+                        <Footer/>
                     </div>
                 </div>
             </div>
