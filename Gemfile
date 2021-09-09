@@ -25,7 +25,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'jquery-rails'
 gem 'aws-sdk-s3', require: false
-gem 'nokogiri', '1.8.5'
+# gem 'nokogiri', '1.8.5'
 
 
 group :development, :test do
