@@ -16,7 +16,6 @@
  * {
      margin: 0px;
      font-family: Arial, sans-serif;
-     
  }
 
  .header {
@@ -371,13 +370,37 @@
 // FOOTER
 
 .footer__component{
-    height: 40px;
-    text-align: center;
-    background-color: #37475a;
-    color: white;
-    position: fixed;
-    left: 0;
+    height: 50px;
+    background-color: #131921;
+    position: sticky;
+    display: flex;
     bottom: 0;
     width: 100%;
-    z-index: 100;
+    align-items: center;
+    justify-content: center;
 }
+
+.footer__componentText{
+    color: white;
+    width: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__componentGithub{
+    color: white;
+    // width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__componentLinkedIn{
+    color: white;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
