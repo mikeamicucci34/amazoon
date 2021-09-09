@@ -296,6 +296,8 @@
 
 .home {
     background-color: #EAEDED;
+    background-size: cover;
+    height: 100%;
 }
 
 .homepage_containerbackgroundImage {
@@ -310,6 +312,7 @@
 .homepage__container {
     max-width: 1500px;
     margin: 0 auto;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     background-size: cover;
@@ -372,7 +375,7 @@
 .footer__component{
     height: 50px;
     background-color: #131921;
-    position: sticky;
+    position: fixed;
     display: flex;
     bottom: 0;
     width: 100%;
