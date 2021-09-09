@@ -6,7 +6,7 @@ class Api::SessionsController < ApplicationController
           params[:user][:password]
         )
     
-        if @user
+        if @user  
           login(@user)
           render "api/users/show" # Render users show page if the user is logged in. May want to change to user homepage
         else
@@ -14,14 +14,13 @@ class Api::SessionsController < ApplicationController
         end
       end
 
-    def destroy
-    # debugger  
+    def destroy 
         @user = current_user
         if @user
           logout
           render "api/users/show"
         else
-          render status: 404
+          render json: ["No one signed in"], status: 404
         end
       end
 

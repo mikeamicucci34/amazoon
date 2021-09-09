@@ -29,7 +29,6 @@ class Signup extends React.Component {
                 obj[key] = this.state[key];
                 return obj;
             }, {});
-            // debugger;
         this.props.signup(filtered)
             .then(() => this.props.history.push("/"))
     }
