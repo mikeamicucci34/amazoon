@@ -45,26 +45,29 @@ product1 = Product.create!({
     title: "Think on These Things",
     description: "‘The material contained in this volume was originally presented in the form of talks to students, teachers and parents in India, but its keen penetration and lucid simplicity will be deeply meaningful to thoughtful people everywhere, of all ages, and in every walk of life. Krishnamurti examines with characteristic objectivity and insight the expressions of what we are pleased to call our culture, our education, religion, politics and tradition; and he throws much light on such basic emotions as ambition, greed and envy, the desire for security and the lust for power – all of which he shows to be deteriorating factors in human society.’From the Editor’s Note‘Krishnamurti’s observations and explorations of modern man’s estate are penetrating and profound, yet given with a disarming simplicity and directness. To listen to him or to read his thoughts is to face oneself and the world with an astonishing morning freshness.’Anne Marrow Lindbergh",
     author: "J. Krishnamurti",
+    category_id: 1,
     price: 12.99,
 })
 
-product2 = Product.create!({
-    title: "Sapiens: A Brief History of Humankind",
-    description: "Most books about the history of humanity pursue either a historical or a biological approach, but Dr. Yuval Noah Harari breaks the mold with this highly original book that begins about 70,000 years ago with the appearance of modern cognition. From examining the role evolving humans have played in the global ecosystem to charting the rise of empires, Sapiens integrates history and science to reconsider accepted narratives, connect past developments with contemporary concerns, and examine specific events within the context of larger ideas.",
-    author: "Yuval Noah Harari",
-    price: 14.99,
-})
+product1.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/Think_on_these_things.jpeg"), filename: "think_on_these_things.jpeg")
 
-product3 = Product.create!({
-    title: "Awareness: Conversations with the Masters",
-    description: "",
-    author: "Anthony de Mello, SJ",
-    price: 12.99,
-})
+# product2 = Product.create!({
+#     title: "Sapiens: A Brief History of Humankind",
+#     description: "Most books about the history of humanity pursue either a historical or a biological approach, but Dr. Yuval Noah Harari breaks the mold with this highly original book that begins about 70,000 years ago with the appearance of modern cognition. From examining the role evolving humans have played in the global ecosystem to charting the rise of empires, Sapiens integrates history and science to reconsider accepted narratives, connect past developments with contemporary concerns, and examine specific events within the context of larger ideas.",
+#     author: "Yuval Noah Harari",
+#     price: 14.99,
+# })
 
-product4 = Product.create!({
-    title: "",
-    description: "",
-    author: "",
-    price: ,
-})
+# product3 = Product.create!({
+#     title: "Awareness: Conversations with the Masters",
+#     description: "",
+#     author: "Anthony de Mello, SJ",
+#     price: 12.99,
+# })
+
+# product4 = Product.create!({
+#     title: "",
+#     description: "",
+#     author: "",
+#     price: ,
+# })

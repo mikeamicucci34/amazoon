@@ -16,6 +16,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import LogoutContainer from './session_form/logout_container';
 import HeaderContainer from './header/header_container';
 import HomeContainer from './homepage/home_container';
+import SpecificProductContainer from './product/specific_product_container';
 
 
 const App = () => (
@@ -24,6 +25,7 @@ const App = () => (
         <AuthRoute exact path="/login" component={LoginContainer} />
         <AuthRoute exact path="/signup" component={SignupContainer} />
         <Route exact path="/logout" component={LogoutContainer} />
+        <Route exact path={`/product/:productId`} component={SpecificProductContainer} />
         <Route exact path="/" component={HomeContainer}/>
       </Switch>
   </div>
