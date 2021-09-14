@@ -1,3 +1,3 @@
-# debugger
-json.extract! product, :id, :title, :description, :price
-# json.photoUrl url_for(product.photo)
+
+json.extract! product, :id, :title, :description, :price, :author, :pages
+json.photoUrl url_for(product.photo)

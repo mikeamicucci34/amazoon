@@ -2,14 +2,17 @@ import { RECEIVE_ALL_PRODUCTS, RECEIVE_PRODUCT } from '../actions/product_action
 
 
 const productsReducer = (oldState = {}, action) => {
-switch(action.type) {
-    case RECEIVE_ALL_PRODUCTS:
-        return action.products 
-    case RECEIVE_PRODUCT:
-        const addProduct = { [action.product.id]: action.product}
-        return Object.assign({}, oldState, addProduct)
-    default:
-        return oldState; 
+    Object.freeze(oldState);
+    const nextState = Object.assign({}, oldState)
+    switch(action.type) {
+        case RECEIVE_ALL_PRODUCTS:
+            return action.products 
+        case RECEIVE_PRODUCT:
+            // debugger;
+            nextState[action.product.id] = action.product
+            return nextState
+        default:
+            return oldState; 
     }
 }
 

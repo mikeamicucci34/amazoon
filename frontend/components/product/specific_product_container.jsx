@@ -7,8 +7,8 @@ import SpecificProduct from './specific_product';
 const mSTP = (state, ownProps) => {
     debugger;
     return ({
-    product: state.products[ownProps.match.params.id],
-    productId: parseInt(ownProps.match.params.id)
+    product: state.entities.products[ownProps.match.params.productId],
+    // productId: parseInt(ownProps.match.params.id)
 })
 }
 
