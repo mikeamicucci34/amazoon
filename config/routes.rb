@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy, :show]
     resources :products, only: [:show, :index]
     resources :carts, only: [:index, :show, :destroy, :create]
+    resources :reviews, only: [:index, :destroy, :create]
 
     # get '/login', to: 'sessions#show'
   end

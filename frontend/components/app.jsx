@@ -18,6 +18,7 @@ import HeaderContainer from './header/header_container';
 import HomeContainer from './homepage/home_container';
 import SpecificProductContainer from './product/specific_product_container';
 import CartComponent from '../components/cart/cart_container'
+import ReviewContainer from '../components/reviews/review_container';
 
 
 const App = () => (
@@ -28,6 +29,7 @@ const App = () => (
         <Route exact path="/logout" component={LogoutContainer} />
         <Route exact path="/products/:productId" component={SpecificProductContainer}/>
         <Route exact path="/carts" component={CartComponent}/>
+        <ProtectedRoute exact path="/review" component={ReviewContainer}/>
         <Route exact path="/" component={HomeContainer}/>
       </Switch>
   </div>

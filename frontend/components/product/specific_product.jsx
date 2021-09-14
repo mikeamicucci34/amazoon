@@ -6,6 +6,8 @@ import MenuBookIcon from '@material-ui/icons/MenuBook';
 import LanguageIcon from '@material-ui/icons/Language';
 import BusinessIcon from '@material-ui/icons/Business';
 import Footer from '../footer/footer'
+import Review from '../reviews/review'
+import { Link } from 'react-router-dom'
 
 class SpecificProduct extends React.Component {
     constructor(props) {
@@ -122,6 +124,9 @@ class SpecificProduct extends React.Component {
                             <button> Add to Cart </button>
                         </div>
                     </div>
+                </div>
+                <div>
+                    <Link to="/review"><button>Create Review</button></Link>
                 </div>
                 <div>
                     <Footer/>
