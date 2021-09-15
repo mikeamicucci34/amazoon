@@ -11,8 +11,7 @@ class Product < ApplicationRecord
 
     belongs_to :shopping_cart,
         foreign_key: :product_id,
-        class_name: :ShoppingCart,
-        optional: true
+        class_name: :ShoppingCart
 
     has_one_attached :photo
 

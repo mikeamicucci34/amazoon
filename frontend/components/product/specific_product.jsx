@@ -12,11 +12,33 @@ import { Link } from 'react-router-dom'
 class SpecificProduct extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            quantity: 1
+        }
+
+        this.changeQty = this.changeQty.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     componentDidMount() {
         this.props.fetchProduct(this.props.match.params.productId);
     }
+
+    changeQty(e) {
+        e.preventDefault();
+        this.setState({ quantity: e.target.value })
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        const cart = {
+            quantity: this.state.quantity,
+            user_id: this.props.currentUser.id,
+            product_id: this.props.productId
+        }
+        this.props.addCartItem(cart).then(() => this.props.history.push("/carts"))
+    }
+
 
     render() {
 
@@ -25,12 +47,11 @@ class SpecificProduct extends React.Component {
         }
 
         const kindlePrice = this.props.product.price
-
         return (
 
             <>
                 <div>
-                    <Header/>
+                    <Header {...this.props}/>
                 </div>
                 <div>
                     <SubHeader/>
@@ -120,9 +141,27 @@ class SpecificProduct extends React.Component {
                         <div className="specificProduct__checkoutContainerDisclosure">
                         <p> By purchasing or adding this title to your cart you may be eligible to receive an eBook credit toward select titles. </p>
                         </div>
-                        <div className="specificProduct__checkoutContainerButton">
-                            <button> Add to Cart </button>
-                        </div>
+                        <form className="specificProduct__checkoutContainerForm" onSubmit={this.handleSubmit}>
+                            <div>
+                                <label htmlFor="qty">Qty:      
+                                        <select id="qty" onChange={this.changeQty} value={this.state.quantity}> 
+                                            <option value={1}>1</option>
+                                            <option value={2}>2</option>
+                                            <option value={3}>3</option>
+                                            <option value={4}>4</option>
+                                            <option value={5}>5</option>
+                                            <option value={6}>6</option>
+                                            <option value={7}>7</option>
+                                            <option value={8}>8</option>
+                                            <option value={9}>9</option>
+                                            <option value={10}>10</option>
+                                        </select>
+                                </label> 
+                            </div>
+                            <div className="specificProduct__checkoutContainerButton">
+                                <button> Add to Cart </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
                 <div>

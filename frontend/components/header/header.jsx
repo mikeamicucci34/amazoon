@@ -10,9 +10,13 @@ class Header extends React.Component {
         super(props)
     }
 
+
+
+    
     
     render() {
 
+        debugger;
         const { currentUser } = this.props
 
         const linkto = (
@@ -66,7 +70,9 @@ class Header extends React.Component {
                     </div>
 
                     <div className="header__option">
-                        <span className='header__optionLineOne'>0</span>
+                        <span className='header__optionLineOne'>
+                            0
+                        </span>
                         <span className='header__optionLineTwo'>
                             <Link to="/carts">
                             <p><ShoppingCartIcon className="header__optionBasket"/>

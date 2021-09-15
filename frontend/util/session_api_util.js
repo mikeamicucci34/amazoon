@@ -4,7 +4,7 @@
 
 
 export const signup = (user) => {
-    debugger;
+    // debugger;
     return (
         $.ajax ({
             method: "POST",

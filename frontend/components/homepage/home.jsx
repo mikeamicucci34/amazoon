@@ -16,7 +16,7 @@ export default class Homepage extends React.Component {
             <div className="home">
                 <div className="home__container">
                     <div className="header__container"> 
-                        <Header/>
+                        <Header key={3}/>
                     </div>
                     <div>
                         <SubHeader/>

@@ -10,7 +10,7 @@ export default class Review extends React.Component {
     }
 
     action(field) {
-        debugger;
+        // debugger;
         return e => this.setState({ [field]: e.target.value })
     }
 
@@ -23,7 +23,7 @@ export default class Review extends React.Component {
     render() {
         
         const { review } = this.props
-        debugger;
+        // debugger;
 
         return (
             <div>

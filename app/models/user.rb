@@ -8,21 +8,21 @@ class User < ApplicationRecord
   
     after_initialize :ensure_session_token
 
-    # has_many :helpfuls,
-    #   foreign_key: :user_id,
-    #   class_name: :Helpful
+    has_many :helpfuls,
+      foreign_key: :user_id,
+      class_name: :Helpful
 
-    # has_many :helpfuls,
-    #   foreign_key: :user_id,
-    #   class_name: :Helpful
+    has_many :helpfuls,
+      foreign_key: :user_id,
+      class_name: :Helpful
 
-    # has_many :reviews,
-    #   foreign_key: :user_id,
-    #   class_name: :Review
+    has_many :reviews,
+      foreign_key: :user_id,
+      class_name: :Review
 
-    # has_one :shopping_cart,
-    #   foreign_key: :user_id,
-    #   class_name: :User
+    has_many :shopping_carts,
+      foreign_key: :user_id,
+      class_name: :ShoppingCart
 
   
     def self.find_by_credentials(email, password)
