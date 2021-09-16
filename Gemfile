@@ -25,6 +25,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'jquery-rails'
 gem 'aws-sdk-s3'
+gem 'open-uri'
 
 
 group :development, :test do

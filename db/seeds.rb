@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 # require '../../keys.rb'
 # require 'rest-client'
-
+require 'open-uri'
 
 Category.delete_all
 Helpful.delete_all
@@ -51,7 +51,7 @@ product1 = Product.create!({
     category: "Philosophy",
 })
 
-product1.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/Think_on_these_things.jpeg"), filename: "think_on_these_things.jpeg")
+product1.photo.attach(io: URI.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/Think_on_these_things.jpeg"), filename: "think_on_these_things.jpeg")
 
 product2 = Product.create!({
     title: "Sapiens: A Brief History of Humankind",
@@ -64,7 +64,7 @@ product2 = Product.create!({
 
 })
 
-product2.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/sapiens.jpg"), filename: "sapiens.jpeg")
+product2.photo.attach(io: URI.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/sapiens.jpg"), filename: "sapiens.jpeg")
 
 product3 = Product.create!({
     title: "Awareness: Conversations with the Masters",
@@ -77,7 +77,7 @@ product3 = Product.create!({
 
 })
 
-product3.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/Awareness- Conversations with the Masters.jpeg"), filename: "Conversations with the Masters.jpeg")
+product3.photo.attach(io: URI.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/Awareness- Conversations with the Masters.jpeg"), filename: "Conversations with the Masters.jpeg")
 
 product4 = Product.create!({
     title: "On the Road",
@@ -90,7 +90,7 @@ product4 = Product.create!({
 
 })
 
-product4.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/on_the_road.jpg"), filename: "on_the_road.jpeg")
+product4.photo.attach(io: URI.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/on_the_road.jpg"), filename: "on_the_road.jpeg")
 
 product5 = Product.create!({
     title: "Slaughterhouse-Five: A Novel",
@@ -103,7 +103,7 @@ product5 = Product.create!({
 
 })
 
-product5.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/slaughterhouse_five.jpeg"), filename: "slaughterhouse_five.jpeg")
+product5.photo.attach(io: URI.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/slaughterhouse_five.jpeg"), filename: "slaughterhouse_five.jpeg")
 
 
 
@@ -118,7 +118,7 @@ product6 = Product.create!({
 
 })
 
-product6.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/the_hard_thing.jpeg"), filename: "the_hard_thing.jpeg")
+product6.photo.attach(io: URI.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/the_hard_thing.jpeg"), filename: "the_hard_thing.jpeg")
 
 
 product7 = Product.create!({
@@ -132,7 +132,7 @@ product7 = Product.create!({
 
 })
 
-product7.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/How to Change Your Mind- What the New Science of Psychedelics Teaches Us About Consciousness, Dying, Addiction, Depression, and Transcendence.jpeg"), filename: "Transcendence.jpeg")
+product7.photo.attach(io: URI.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/How to Change Your Mind- What the New Science of Psychedelics Teaches Us About Consciousness, Dying, Addiction, Depression, and Transcendence.jpeg"), filename: "Transcendence.jpeg")
 
 
 product8 = Product.create!({
@@ -146,7 +146,7 @@ product8 = Product.create!({
 
 })
 
-product8.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/'Surely You're Joking, Mr. Feynman!'- Adventures of a Curious Character.jpeg"), filename: "Curious Character.jpeg")
+product8.photo.attach(io: URI.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/'Surely You're Joking, Mr. Feynman!'- Adventures of a Curious Character.jpeg"), filename: "Curious Character.jpeg")
 
 
 product9 = Product.create!({
@@ -160,7 +160,7 @@ product9 = Product.create!({
 
 })
 
-product9.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/Man's Search for Meaning.jpeg"), filename: "Search for Meaning.jpeg")
+product9.photo.attach(io: URI.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/Man's Search for Meaning.jpeg"), filename: "Search for Meaning.jpeg")
 
 
 product10 = Product.create!({
@@ -175,7 +175,7 @@ product10 = Product.create!({
 })
 
 
-product10.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/The Dhammapada (Easwaran's Classics of Indian Spirituality Book 3).jpeg"), filename: "The Dhammapada.jpeg")
+product10.photo.attach(io: URI.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/The Dhammapada (Easwaran's Classics of Indian Spirituality Book 3).jpeg"), filename: "The Dhammapada.jpeg")
 
 
 product11 = Product.create!({
@@ -189,7 +189,7 @@ product11 = Product.create!({
 
 })
 
-product11.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/A Supposedly Fun Thing I'll Never Do Again- Essays and Arguments.jpeg"), filename: "Fun Thing I'll Never Do Again.jpeg")
+product11.photo.attach(io: URI.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/A Supposedly Fun Thing I'll Never Do Again- Essays and Arguments.jpeg"), filename: "Fun Thing I'll Never Do Again.jpeg")
 
 
 product12 = Product.create!({
@@ -203,7 +203,7 @@ product12 = Product.create!({
 
 })
 
-product12.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/The Mezzanine- A Novel.jpeg"), filename: "The Mezzanine.jpeg")
+product12.photo.attach(io: URI.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/The Mezzanine- A Novel.jpeg"), filename: "The Mezzanine.jpeg")
 
 
 product13 = Product.create!({
@@ -217,7 +217,7 @@ product13 = Product.create!({
 
 })
 
-product13.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/The Corrections- A Novel.jpeg"), filename: "The Corrections.jpeg")
+product13.photo.attach(io: URI.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/The Corrections- A Novel.jpeg"), filename: "The Corrections.jpeg")
 
 
 product14 = Product.create!({
@@ -231,7 +231,7 @@ product14 = Product.create!({
 
 })
 
-product14.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/Kafka on the Shore.jpeg"), filename: "Kafka on the Shore.jpeg")
+product14.photo.attach(io: URI.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/Kafka on the Shore.jpeg"), filename: "Kafka on the Shore.jpeg")
 
 
 product15 = Product.create!({
@@ -245,7 +245,7 @@ product15 = Product.create!({
 
 })
 
-product15.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/White Noise.jpeg"), filename: "White Noise.jpeg")
+product15.photo.attach(io: URI.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/White Noise.jpeg"), filename: "White Noise.jpeg")
 
 
 product16 = Product.create!({
@@ -259,7 +259,7 @@ product16 = Product.create!({
 
 })
 
-product16.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/Stoner.jpeg"), filename: "Stoner.jpeg")
+product16.photo.attach(io: URI.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/Stoner.jpeg"), filename: "Stoner.jpeg")
 
 
 product17 = Product.create!({
@@ -273,7 +273,7 @@ product17 = Product.create!({
 
 })
 
-product17.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/The Pale King- An Unfinished Novel.jpeg"), filename: "The Pale King.jpeg")
+product17.photo.attach(io: URI.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/The Pale King- An Unfinished Novel.jpeg"), filename: "The Pale King.jpeg")
 
 
 product18 = Product.create!({
@@ -287,7 +287,7 @@ product18 = Product.create!({
 
 })
 
-product18.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/The Broom of the System- A Novel.jpeg"), filename: "The Broom of the System.jpeg")
+product18.photo.attach(io: URI.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/The Broom of the System- A Novel.jpeg"), filename: "The Broom of the System.jpeg")
 
 
 
@@ -304,7 +304,7 @@ product32 = Product.create!({
 
 })
 
-product32.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/Consider the Lobster- And Other Essays.jpeg"), filename: "Consider the Lobster.jpeg")
+product32.photo.attach(io: URI.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/Consider the Lobster- And Other Essays.jpeg"), filename: "Consider the Lobster.jpeg")
 
 
 product19 = Product.create!({
@@ -318,7 +318,7 @@ product19 = Product.create!({
 
 })
 
-product19.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/The Lean Startup- How Today's Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses.jpeg"), filename: "The Lean Startup.jpeg")
+product19.photo.attach(io: URI.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/The Lean Startup- How Today's Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses.jpeg"), filename: "The Lean Startup.jpeg")
 
 
 product20 = Product.create!({
@@ -334,7 +334,7 @@ product20 = Product.create!({
 
 })
 
-product20.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/the_strangers.jpeg"), filename: "the_strangers.jpeg")
+product20.photo.attach(io: URI.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/the_strangers.jpeg"), filename: "the_strangers.jpeg")
 
 
 product21 = Product.create!({
@@ -348,7 +348,7 @@ product21 = Product.create!({
 
 })
 
-product21.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/The Fountainhead.jpeg"), filename: "The Fountainhead.jpeg")
+product21.photo.attach(io: URI.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/The Fountainhead.jpeg"), filename: "The Fountainhead.jpeg")
 
 
 
@@ -363,7 +363,7 @@ product23 = Product.create!({
 
 })
 
-product23.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/High Output Management.jpeg"), filename: "High Output Management.jpeg")
+product23.photo.attach(io: URI.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/High Output Management.jpeg"), filename: "High Output Management.jpeg")
 
 
 product24 = Product.create!({
@@ -377,7 +377,7 @@ product24 = Product.create!({
 
 })
 
-product24.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/Brave New World- With the Essay 'Brave New World Revisited'.jpeg"), filename: "Brave New World.jpeg")
+product24.photo.attach(io: URI.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/Brave New World- With the Essay 'Brave New World Revisited'.jpeg"), filename: "Brave New World.jpeg")
 
 
 product25 = Product.create!({
@@ -391,7 +391,7 @@ product25 = Product.create!({
 
 })
 
-product25.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/A Clockwork Orange.jpeg"), filename: "A Clockwork Orange.jpeg")
+product25.photo.attach(io: URI.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/A Clockwork Orange.jpeg"), filename: "A Clockwork Orange.jpeg")
 
 
 product26 = Product.create!({
@@ -405,7 +405,7 @@ product26 = Product.create!({
 
 })
 
-product26.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/The Grapes of Wrath.jpeg"), filename: "The Grapes of Wrath.jpeg")
+product26.photo.attach(io: URI.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/The Grapes of Wrath.jpeg"), filename: "The Grapes of Wrath.jpeg")
 
 
 product27 = Product.create!({
@@ -419,7 +419,7 @@ product27 = Product.create!({
 
 })
 
-product27.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/American Pastoral.jpeg"), filename: "American Pastoral.jpeg")
+product27.photo.attach(io: URI.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/American Pastoral.jpeg"), filename: "American Pastoral.jpeg")
 
 
 product28 = Product.create!({
@@ -433,7 +433,7 @@ product28 = Product.create!({
 
 })
 
-product28.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/1984.jpeg"), filename: "1984.jpeg")
+product28.photo.attach(io: URI.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/1984.jpeg"), filename: "1984.jpeg")
 
 
 
@@ -449,7 +449,7 @@ product30 = Product.create!({
     category: "Philosophy",
 })
 
-product30.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/A Confession.jpeg"), filename: "A Confession.jpeg")
+product30.photo.attach(io: URI.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/A Confession.jpeg"), filename: "A Confession.jpeg")
 
 
 product31 = Product.create!({
@@ -462,4 +462,4 @@ product31 = Product.create!({
     category: "Humurous Fiction",
 })
 
-product31.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/Infinite Jest.jpeg"), filename: "Infinite Jest.jpeg")
+product31.photo.attach(io: URI.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/Infinite Jest.jpeg"), filename: "Infinite Jest.jpeg")
