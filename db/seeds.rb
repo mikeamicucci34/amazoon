@@ -51,7 +51,7 @@ product1 = Product.create!({
     category: "Philosophy",
 })
 
-product1.photo.attach(io: URI.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/Think_on_these_things.jpeg"), filename: "think_on_these_things.jpeg")
+product1.photo.attach(io: URI.open("https://amazoon-seeds.s3.amazonaws.com/Think_on_these_things.jpeg"), filename: "think_on_these_things.jpeg")
 
 product2 = Product.create!({
     title: "Sapiens: A Brief History of Humankind",
