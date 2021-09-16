@@ -39,7 +39,7 @@ class Cart extends React.Component {
             totalQuantity += item.quantity
         })
 
-        debugger;
+        // debugger;
 
         return (
             <div>
