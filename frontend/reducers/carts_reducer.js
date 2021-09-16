@@ -6,13 +6,15 @@ const productsReducer = (oldState = {}, action) => {
     const nextState = Object.assign({}, oldState)
     switch(action.type) {
         case RECEIVE_ITEMS:
+            debugger;
             return action.cart_items
         case RECEIVE_ITEM:
-            // debugger;
+            debugger;
             nextState[action.cart_item.id] = action.cart_item
             return nextState;
         case REMOVE_ITEM:
-            delete nextState[action.cart_item.id]
+            debugger;
+            delete nextState[action.cart_itemId]
             return nextState;
         default:
             return oldState; 

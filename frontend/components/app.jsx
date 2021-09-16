@@ -19,7 +19,12 @@ import HomeContainer from './homepage/home_container';
 import SpecificProductContainer from './product/specific_product_container';
 import CartComponent from '../components/cart/cart_container'
 import ReviewContainer from '../components/reviews/review_container';
-
+import AllContainer from '../components/product_pages/all/all_container';
+import BestSellersContainer from '../components/product_pages/best_sellers/best_sellers_container'
+import HumorousFictionContainer from '../components/product_pages/humorous_fiction/humorous_fiction_container'
+import ClassicsContainer from '../components/product_pages/classics/classics_container'
+import BusinessContainer from '../components/product_pages/business/business_container'
+import PhilosophyContainer from '../components/product_pages/philosophy/philosophy_container'
 
 const App = () => (
   <div className="app">
@@ -28,9 +33,15 @@ const App = () => (
         <AuthRoute exact path="/signup" component={SignupContainer} />
         <Route exact path="/logout" component={LogoutContainer} />
         <Route exact path="/products/:productId" component={SpecificProductContainer}/>
-        <Route exact path="/carts" component={CartComponent}/>
+        <ProtectedRoute exact path="/carts" component={CartComponent}/>
         <ProtectedRoute exact path="/review" component={ReviewContainer}/>
         <Route exact path="/" component={HomeContainer}/>
+        <Route exact path="/all" component={AllContainer}/>
+        <Route exact path="/bestsellers" component={BestSellersContainer}/>
+        <Route exact path="/humorousfiction" component={HumorousFictionContainer}/>
+        <Route exact path="/classics" component={ClassicsContainer}/>
+        <Route exact path="/business" component={BusinessContainer}/>
+        <Route exact path="/philosophy" component={PhilosophyContainer}/>
       </Switch>
   </div>
 );

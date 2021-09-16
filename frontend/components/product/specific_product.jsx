@@ -31,12 +31,17 @@ class SpecificProduct extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        if (this.props.currentUser === undefined){
+            () => this.props.history.push("/carts")
+        } else {
         const cart = {
             quantity: this.state.quantity,
             user_id: this.props.currentUser.id,
             product_id: this.props.productId
         }
+        debugger;
         this.props.addCartItem(cart).then(() => this.props.history.push("/carts"))
+        }
     }
 
 
@@ -159,7 +164,7 @@ class SpecificProduct extends React.Component {
                                 </label> 
                             </div>
                             <div className="specificProduct__checkoutContainerButton">
-                                <button> Add to Cart </button>
+                                <button type="submit"> Add to Cart </button>
                             </div>
                         </form>
                     </div>

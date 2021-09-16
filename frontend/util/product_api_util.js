@@ -9,6 +9,6 @@ export const fetchProduct = (productId) => (
 export const fetchProducts = () => (
     $.ajax ({
         method: "GET",
-        url: `/api/product`,
+        url: `/api/products`,
     })
 )

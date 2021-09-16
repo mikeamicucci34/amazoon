@@ -15,8 +15,6 @@ class Header extends React.Component {
     
     
     render() {
-
-        debugger;
         const { currentUser } = this.props
 
         const linkto = (

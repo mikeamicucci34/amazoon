@@ -48,7 +48,7 @@ product1 = Product.create!({
     category_id: 1,
     price: 12.99,
     pages: 272,
-
+    category: "Philosophy",
 })
 
 product1.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/Think_on_these_things.jpeg"), filename: "think_on_these_things.jpeg")
@@ -60,6 +60,8 @@ product2 = Product.create!({
     category_id: 1,
     price: 14.99,
     pages: 469,
+    category: "Best Sellers",
+
 })
 
 product2.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/sapiens.jpg"), filename: "sapiens.jpeg")
@@ -71,6 +73,8 @@ product3 = Product.create!({
     category_id: 1,
     price: 12.99,
     pages: 194,
+    category: "Philosophy",
+
 })
 
 product3.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/Awareness- Conversations with the Masters.jpeg"), filename: "Conversations with the Masters.jpeg")
@@ -81,7 +85,9 @@ product4 = Product.create!({
     author: "Jack Kerouac",
     category_id: 1,
     price: 12.99,
-    pages: 306
+    pages: 306,
+    category: "Classics",
+
 })
 
 product4.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/on_the_road.jpg"), filename: "on_the_road.jpeg")
@@ -93,6 +99,8 @@ product5 = Product.create!({
     category_id: 1,
     price: 6.99,
     pages: 231,
+    category: "Classics",
+
 })
 
 product5.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/slaughterhouse_five.jpeg"), filename: "slaughterhouse_five.jpeg")
@@ -106,6 +114,8 @@ product6 = Product.create!({
     category_id: 1,
     price: 14.99,
     pages: 308,
+    category: "Business & Entrepreneurship",
+
 })
 
 product6.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/the_hard_thing.jpeg"), filename: "the_hard_thing.jpeg")
@@ -118,6 +128,8 @@ product7 = Product.create!({
     category_id: 1,
     price: 9.99,
     pages: 474,
+    category: "Best Sellers",
+
 })
 
 product7.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/How to Change Your Mind- What the New Science of Psychedelics Teaches Us About Consciousness, Dying, Addiction, Depression, and Transcendence.jpeg"), filename: "Transcendence.jpeg")
@@ -130,6 +142,8 @@ product8 = Product.create!({
     category_id: 1,
     price: 9.04,
     pages: 352,
+    category: "Best Sellers",
+
 })
 
 product8.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/'Surely You're Joking, Mr. Feynman!'- Adventures of a Curious Character.jpeg"), filename: "Curious Character.jpeg")
@@ -142,6 +156,8 @@ product9 = Product.create!({
     category_id: 1,
     price: 9.99 ,
     pages: 188,
+    category: "Philosophy",
+
 })
 
 product9.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/Man's Search for Meaning.jpeg"), filename: "Search for Meaning.jpeg")
@@ -154,7 +170,10 @@ product10 = Product.create!({
     category_id: 1,
     price: 6.99,
     pages: 282,
+    category: "Philosophy",
+
 })
+
 
 product10.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/The Dhammapada (Easwaran's Classics of Indian Spirituality Book 3).jpeg"), filename: "The Dhammapada.jpeg")
 
@@ -166,6 +185,8 @@ product11 = Product.create!({
     category_id: 1,
     price: 10.99,
     pages: 372 ,
+    category: "Humurous Fiction",
+
 })
 
 product11.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/A Supposedly Fun Thing I'll Never Do Again- Essays and Arguments.jpeg"), filename: "Fun Thing I'll Never Do Again.jpeg")
@@ -178,6 +199,8 @@ product12 = Product.create!({
     category_id: 1,
     price: 9.99,
     pages: 145,
+    category: "Best Sellers",
+
 })
 
 product12.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/The Mezzanine- A Novel.jpeg"), filename: "The Mezzanine.jpeg")
@@ -190,6 +213,8 @@ product13 = Product.create!({
     category_id: 1,
     price: 14.99,
     pages: 580,
+    category: "Humurous Fiction",
+
 })
 
 product13.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/The Corrections- A Novel.jpeg"), filename: "The Corrections.jpeg")
@@ -202,6 +227,8 @@ product14 = Product.create!({
     category_id: 1,
     price: 11.99,
     pages: 448,
+    category: "Classics",
+
 })
 
 product14.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/Kafka on the Shore.jpeg"), filename: "Kafka on the Shore.jpeg")
@@ -214,6 +241,8 @@ product15 = Product.create!({
     category_id: 1,
     price: 13.99,
     pages: 324,
+    category: "Humurous Fiction",
+
 })
 
 product15.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/White Noise.jpeg"), filename: "White Noise.jpeg")
@@ -226,6 +255,8 @@ product16 = Product.create!({
     category_id: 1,
     price: 9.99,
     pages: 320,
+    category: "Best Sellers",
+
 })
 
 product16.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/Stoner.jpeg"), filename: "Stoner.jpeg")
@@ -238,6 +269,8 @@ product17 = Product.create!({
     category_id: 1,
     price: 11.99,
     pages: 589,
+    category: "Humurous Fiction",
+
 })
 
 product17.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/The Pale King- An Unfinished Novel.jpeg"), filename: "The Pale King.jpeg")
@@ -250,6 +283,8 @@ product18 = Product.create!({
     category_id: 1,
     price: 9.99,
     pages: 482,
+    category: "Humurous Fiction",
+
 })
 
 product18.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/The Broom of the System- A Novel.jpeg"), filename: "The Broom of the System.jpeg")
@@ -265,6 +300,8 @@ product32 = Product.create!({
     category_id: 1,
     price: 10.99 ,
     pages: 381,
+    category: "Humurous Fiction",
+
 })
 
 product32.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/Consider the Lobster- And Other Essays.jpeg"), filename: "Consider the Lobster.jpeg")
@@ -277,6 +314,8 @@ product19 = Product.create!({
     category_id: 1,
     price: 14.99,
     pages: 254,
+    category: "Business & Entrepreneurship",
+
 })
 
 product19.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/The Lean Startup- How Today's Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses.jpeg"), filename: "The Lean Startup.jpeg")
@@ -291,6 +330,8 @@ product20 = Product.create!({
     category_id: 1,
     price: 2.99,
     pages: 146,
+    category: "Classics",
+
 })
 
 product20.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/the_strangers.jpeg"), filename: "the_strangers.jpeg")
@@ -303,6 +344,8 @@ product21 = Product.create!({
     category_id: 1,
     price: 9.99,
     pages: 752,
+    category: "Classics",
+
 })
 
 product21.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/The Fountainhead.jpeg"), filename: "The Fountainhead.jpeg")
@@ -316,6 +359,8 @@ product23 = Product.create!({
     category_id: 1,
     price: 13.99,
     pages: 261,
+    category: "Business & Entrepreneurship",
+
 })
 
 product23.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/High Output Management.jpeg"), filename: "High Output Management.jpeg")
@@ -328,6 +373,8 @@ product24 = Product.create!({
     category_id: 1,
     price: 13.49,
     pages: 136,
+    category: "Classics",
+
 })
 
 product24.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/Brave New World- With the Essay 'Brave New World Revisited'.jpeg"), filename: "Brave New World.jpeg")
@@ -340,6 +387,8 @@ product25 = Product.create!({
     category_id: 1,
     price: 9.04,
     pages: 162,
+    category: "Classics",
+
 })
 
 product25.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/A Clockwork Orange.jpeg"), filename: "A Clockwork Orange.jpeg")
@@ -352,6 +401,8 @@ product26 = Product.create!({
     category_id: 1,
     price: 1.99,
     pages: 215,
+    category: "Classics",
+
 })
 
 product26.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/The Grapes of Wrath.jpeg"), filename: "The Grapes of Wrath.jpeg")
@@ -364,6 +415,8 @@ product27 = Product.create!({
     category_id: 1,
     price: 9.99,
     pages: 436,
+    category: "Classics",
+
 })
 
 product27.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/American Pastoral.jpeg"), filename: "American Pastoral.jpeg")
@@ -376,6 +429,8 @@ product28 = Product.create!({
     category_id: 1,
     price: 9.99,
     pages: 205,
+    category: "Classics",
+
 })
 
 product28.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/1984.jpeg"), filename: "1984.jpeg")
@@ -391,6 +446,7 @@ product30 = Product.create!({
     category_id: 1,
     price: 2.99,
     pages: 98,
+    category: "Philosophy",
 })
 
 product30.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/A Confession.jpeg"), filename: "A Confession.jpeg")
@@ -403,6 +459,7 @@ product31 = Product.create!({
     category_id: 1,
     price: 12.99,
     pages: 1079,
+    category: "Humurous Fiction",
 })
 
 product31.photo.attach(io: File.open("/Users/michaelamicucci/Documents/App Academy/full_stack_pt2/book photos/Infinite Jest.jpeg"), filename: "Infinite Jest.jpeg")

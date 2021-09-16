@@ -6,32 +6,31 @@ class CartItem extends React.Component {
     }
 
     render() {
-        debugger;
 
-        const { removeCartItem } = this.props
+        const { removeCartItem, product } = this.props
 
         return (
 
             <>
                 <div className="cart__componentItemComponents">
                     <div>
-                        <img src={Object.entries(this.props.product)[0].slice(1)[0].photoUrl}/>
+                        <img src={product.photoUrl}/>
                     </div>
                     <div className="cart__componentItemDetails">
-                        <h3>{Object.entries(this.props.product)[0].slice(1)[0].title}</h3>
+                        <h3>{product.title}</h3>
                         <p>In Stock</p>
                         <p>Eligible for free shipping and returns</p>
                         <div className="cart__componentItemDetailsQty">
-                            <button>Qty: {Object.entries(this.props.product)[0].slice(1)[0].quantity} </button>
+                            <button>Qty: {product.quantity} </button>
                             <p>|</p>
-                            <button onClick={() => removeCartItem(Object.entries(this.props.product)[0].slice(1)[0].id)}>Delete</button>
+                            <button onClick={() => removeCartItem(product.id)}>Delete</button>
                             <p>|</p>
                             <p>Save for Later</p>
                             <p>|</p>
                         </div>
                     </div>
                     <div className="cart__componentPriceItem">
-                        <p> {Object.entries(this.props.product)[0].slice(1)[0].price} </p>
+                        <p> {product.price} </p>
                     </div>
                 </div>
 

@@ -10,6 +10,7 @@ export const removeCartItem = (itemId) => (
     $.ajax({
         method: "DELETE",
         url: `/api/carts/${itemId}`,
+        data: { itemId }
     })
 )
 

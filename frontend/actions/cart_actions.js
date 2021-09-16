@@ -15,15 +15,14 @@ export const receiveCartItem = (cart_item) => ({
     cart_item
 })
 
-export const deleteCartItem = (cart_item) => ({
+export const deleteCartItem = (cart_itemId) => ({
     type: REMOVE_ITEM,
-    cart_item
+    cart_itemId
 })
 
 //delete, add, fetch all, fetch one
 
 export const addCartItem = (item) => dispatch => {
-    debugger;
     return (
         APIUtil.addCartItem(item).then((cart_item) => dispatch(receiveCartItem(cart_item)))
     )
@@ -31,7 +30,7 @@ export const addCartItem = (item) => dispatch => {
 
 export const removeCartItem = (itemId) => dispatch => {
     return (
-        APIUtil.removeCartItem(itemId).then((cart_item) => dispatch(deleteCartItem(cart_item)))
+        APIUtil.removeCartItem(itemId).then(() => dispatch(deleteCartItem(itemId)))
     )
 }
 
@@ -43,6 +42,6 @@ export const fetchCartItem = (item) => dispatch => {
 
 export const fetchCartItems = () => dispatch => {
     return (
-        APIUtil.fetchCartItems().then((cart_items) => dispatch(receiveCartItem(cart_items)))
+        APIUtil.fetchCartItems().then((cart_items) => dispatch(receiveCartItems(cart_items)))
     )
 }

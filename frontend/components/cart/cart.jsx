@@ -10,21 +10,38 @@ import shortid from "shortid";
 class Cart extends React.Component {
     constructor(props) {
         super(props)
+        // this.state = {
+        //     quantity: this.props.
+        // }
+
+        this.wipeCartItems = this.wipeCartItems.bind(this)
     }
 
     componentDidMount() {
         this.props.fetchCartItems();
     }
 
+    wipeCartItems() {
+        this.props.items.forEach( item => {
+            this.props.removeCartItem(item.id)
+        })
+    }
+
     render() {
+
+        let totalCost = 0 
+        this.props.items.forEach( item => {
+            totalCost += (item.price * item.quantity)
+        })
+
+        let totalQuantity = 0 
+        this.props.items.forEach( item => {
+            totalQuantity += item.quantity
+        })
+
         debugger;
 
-        if (this.props.items.length === 0) {
-            return null;
-        }
-
         return (
-
             <div>
                 <div>
                     <Header {...this.props}/>
@@ -40,26 +57,26 @@ class Cart extends React.Component {
                                 <p>Price</p>
                             </div>
                             <div>
-                                { (this.props.items) ?
-                                    this.props.items[0].map( (item, idx) => {
+                                { (this.props.items.length > 0) ?
+                                    this.props.items.map( (item, idx) => {
                                            return ( 
                                            <CartItem removeCartItem={this.props.removeCartItem} product={item} key={idx} fetchCartItems={this.props.fetchCartItems} />
                                            )
                                     }) :
                                     <div>
-                                        nothing in cart
+                                        Your Cart is Empty
                                     </div>
                                 }
                             </div>
                             <div className="cart__componentSubtotal">
-                                <p> Subtotal (x items) 199.91 </p>
+                                <p> Subtotal ({totalQuantity} items): ${totalCost} </p>
                             </div>
                         </div>
                         <div className="cart__componentCheckout">
                             <p>Your order qualifies for FREE Shipping. Choose this option at checkout. See details</p>
-                            <h3>Subtotal (x items): 199.91</h3>
+                            <h3>Subtotal ({totalQuantity} items): ${totalCost}</h3>
                             <div className="cart__componentCheckoutButton">
-                            <button>Proceed to Checkout</button>
+                            <button onClick={() => this.wipeCartItems()}>Proceed to Checkout</button>
                             </div>
                         </div>
                     </div>
