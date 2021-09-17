@@ -4,6 +4,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import RoomOutlinedIcon from '@material-ui/icons/RoomOutlined';
 // import AmazonLogo from '../../../imgs/amazon_logo.png'
+import HeaderModal from '../header/header_modal';
 
 class Header extends React.Component {
     constructor(props) {
@@ -15,7 +16,7 @@ class Header extends React.Component {
     
     
     render() {
-        const { currentUser } = this.props
+        const { currentUser, logout } = this.props
 
         const linkto = (
             currentUser ? '/logout' : '/login'
@@ -26,7 +27,7 @@ class Header extends React.Component {
                 <Link to="/" style={{ textDecoration: 'none' }}> 
                     <div className="header__logo">
                         {/* <img src={'../../../imgs/amazon_logo.png'}/> */}
-                        <img src="https://service-client.org/wp-content/uploads/Logo-Amazon-300x144.png"/>
+                        <img src="https://amazoon-seeds.s3.amazonaws.com/amazon_logo.png"/>
                     </div>
                 </Link>
                 <div className="header__nav">
@@ -48,16 +49,9 @@ class Header extends React.Component {
                     <SearchIcon className="header__searchIcon"/>
                 </div>
                 <div className="header__nav">
-                    <Link to={linkto} style={{ textDecoration: 'none' }}> 
-                        <div className="header__option">
-                            <span className="header__optionLineOne">
-                                Hello, {currentUser ? currentUser.username : "Sign In"} 
-                            </span>
-                            <span className="header__optionLineTwo">
-                                Account & Lists
-                            </span>
-                        </div>
-                    </Link>
+                    <div>
+                        <HeaderModal currentUser={currentUser} logout={logout}/>
+                    </div>
                     <div className="header__option">
                         <span className="header__optionLineOne">
                             Returns
@@ -69,7 +63,7 @@ class Header extends React.Component {
 
                     <div className="header__option">
                         <span className='header__optionLineOne'>
-                            0
+                            
                         </span>
                         <span className='header__optionLineTwo'>
                             <Link to="/carts">
