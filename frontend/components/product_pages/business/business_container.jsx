@@ -9,7 +9,8 @@ const mSTP = state => ({
 })
 
 const mDTP = dispatch => ({
-    fetchProducts: () => dispatch(fetchProducts())
+    fetchProducts: () => dispatch(fetchProducts()),
+    logout: () => dispatch(logout()),
 })
 
 export default connect(mSTP, mDTP)(Business);

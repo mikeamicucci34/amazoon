@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import shortid from "shortid";
+import { logout } from '../../util/session_api_util';
 
 class Login extends React.Component {
     constructor(props) {
@@ -13,6 +14,7 @@ class Login extends React.Component {
         this.demoUser = false
 
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.engageDemoUser = this.engageDemoUser.bind(this)
     }
 
     action(field) {

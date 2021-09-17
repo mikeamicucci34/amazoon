@@ -50,9 +50,12 @@ class SpecificProduct extends React.Component {
         if (this.props.product === undefined) {
             return null;
         }
+        const { currentUser } = this.props
 
         const kindlePrice = this.props.product.price
         return (
+
+            
 
             <>
                 <div>
@@ -164,14 +167,17 @@ class SpecificProduct extends React.Component {
                                 </label> 
                             </div>
                             <div className="specificProduct__checkoutContainerButton">
-                                <button type="submit"> Add to Cart </button>
+                                {currentUser ? <button type="submit"> Add to Cart </button> :
+                                    <Link to="/login">
+                                        <button type="submit"> Add to Cart </button>
+                                    </Link>}
                             </div>
                         </form>
                     </div>
                 </div>
-                <div>
+                {/* <div>
                     <Link to="/review"><button>Create Review</button></Link>
-                </div>
+                </div> */}
                 <div>
                     <Footer/>
                 </div>

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { fetchProduct } from '../../actions/product_actions';
 import { addCartItem } from '../../actions/cart_actions';
 import SpecificProduct from './specific_product';
+import { logout } from '../../actions/session_actions'
 
 const mSTP = (state, ownProps) => {
     // debugger;
@@ -21,7 +22,8 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => ({
     addCartItem: (product) => dispatch(addCartItem(product)),
-    fetchProduct: (productId) => dispatch(fetchProduct(productId))
+    fetchProduct: (productId) => dispatch(fetchProduct(productId)),
+    logout: () => dispatch(logout())
 })
 
 export default connect(mSTP, mDTP)(SpecificProduct);
