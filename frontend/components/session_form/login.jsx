@@ -11,7 +11,10 @@ class Login extends React.Component {
             password: ''
         }
 
-        this.demoUser = false
+        this.demoUser = {
+            email: "demouser@gmail.com",
+            password: "demouser"
+        }
 
         this.handleSubmit = this.handleSubmit.bind(this)
         this.engageDemoUser = this.engageDemoUser.bind(this)
@@ -43,13 +46,12 @@ class Login extends React.Component {
         )
     }
 
-    engageDemoUser() {
-        this.demoUser = true
-        this.setState({
-            email: "demouser@gmail.com",
-            password: "demouser"
-        })
+    engageDemoUser(e) {
+        e.preventDefault();
+        this.props.login(this.demoUser)
+            .then(() => this.props.history.push("/"))
     }
+
 
     render() { 
 
@@ -76,7 +78,7 @@ class Login extends React.Component {
                                         onChange={this.action("password")}/>
                                 <button type='submit' className="login__signInButton">Sign-In</button>
                             </form>
-                                <button className="login__signInButton" onClick={() => this.engageDemoUser()}>Demo User</button>
+                                <button className="login__signInButton" onClick={this.engageDemoUser}>Demo User</button>
                                 <p>By continuing, you agree to Amazon's Conidtions of Use and Privacy Notice</p>
                             <div className='login__redirect'>
                                 <button className="login__registerButton">{this.props.navLink}</button>

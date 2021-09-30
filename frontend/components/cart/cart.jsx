@@ -5,7 +5,7 @@ import Footer from '../footer/footer'
 import Product from '../product/product'
 import CartItem from '../cart/cart_item'
 import shortid from "shortid";
-
+// import Alert from 'react-bootstrap/Alert'
 
 class Cart extends React.Component {
     constructor(props) {
@@ -13,6 +13,9 @@ class Cart extends React.Component {
         // this.state = {
         //     quantity: this.props.
         // }
+        this.state = {
+            checkout: ""
+        }
 
         this.wipeCartItems = this.wipeCartItems.bind(this)
     }
@@ -25,6 +28,7 @@ class Cart extends React.Component {
         this.props.items.forEach( item => {
             this.props.removeCartItem(item.id)
         })
+        this.setState({ checkout: 'Your purchase has been completed!'})
     }
 
     render() {
@@ -76,8 +80,9 @@ class Cart extends React.Component {
                             <p>Your order qualifies for FREE Shipping. Choose this option at checkout. See details</p>
                             <h3>Subtotal ({totalQuantity} items): ${totalCost}</h3>
                             <div className="cart__componentCheckoutButton">
-                            <button onClick={() => this.wipeCartItems()}>Proceed to Checkout</button>
+                            {this.props.items.length >= 1 ? <button onClick={() => this.wipeCartItems()}>Checkout</button> : null }
                             </div>
+                            <h4> {this.state.checkout} </h4>
                         </div>
                     </div>
                 </div>

@@ -25,8 +25,6 @@ class CartItem extends React.Component {
                             <p>|</p>
                             <button onClick={() => removeCartItem(product.id)}>Delete</button>
                             <p>|</p>
-                            <p>Save for Later</p>
-                            <p>|</p>
                         </div>
                     </div>
                     <div className="cart__componentPriceItem">

@@ -8,20 +8,26 @@ import BusinessIcon from '@material-ui/icons/Business';
 import Footer from '../footer/footer'
 import Review from '../reviews/review'
 import { Link } from 'react-router-dom'
+import ReviewShow from '../reviews/review_show'
 
 class SpecificProduct extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            quantity: 1
+            quantity: 1,
+            activeIndex: 1
         }
+
 
         this.changeQty = this.changeQty.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.colorChange = this.colorChange.bind(this)
     }
 
     componentDidMount() {
         this.props.fetchProduct(this.props.match.params.productId);
+        this.props.fetchReviews(this.props.match.params.productId);
+        this.props.fetchUsers();
     }
 
     changeQty(e) {
@@ -39,13 +45,17 @@ class SpecificProduct extends React.Component {
             user_id: this.props.currentUser.id,
             product_id: this.props.productId
         }
-        debugger;
         this.props.addCartItem(cart).then(() => this.props.history.push("/carts"))
         }
     }
 
+    colorChange = index => {
+        this.setState({ activeIndex: index })
+    }
+
 
     render() {
+        debugger;
 
         if (this.props.product === undefined) {
             return null;
@@ -54,8 +64,6 @@ class SpecificProduct extends React.Component {
 
         const kindlePrice = this.props.product.price
         return (
-
-            
 
             <>
                 <div>
@@ -87,26 +95,26 @@ class SpecificProduct extends React.Component {
                             <hr/>
                         </div>
                         <div className="specificProduct__containerBookOptions">
-                                <div className="specificProduct__BookOption1">
-                                    <button>
-                                        Kindle <br/> {this.props.product.price}     
+                            <div className="specificProduct__BookOption1">
+                                <button className='specificProduct__containerBookOptionsActive'>
+                                    Kindle <br/> {this.props.product.price}
+                                </button>
+                            </div>
+                            <div className="specificProduct__BookOption2">
+                                <button disabled>
+                                    <p> Hardcover <br/> {((this.props.product.price) + 10).toFixed(2)} </p>
                                     </button>
-                                </div>
-                                <div className="specificProduct__BookOption2">
-                                    <button>
-                                     Hardcover <br/> {((this.props.product.price) + 10).toFixed(2)}
-                                     </button>
-                                </div>
-                                <div className="specificProduct__BookOption3">
-                                    <button>
-                                    Paperback <br/> {((this.props.product.price) + 3).toFixed(2)}
-                                    </button>
-                                </div>
-                                <div className="specificProduct__BookOption4">
-                                    <button>
-                                    Audiobook <br/> {((this.props.product.price) - 1).toFixed(2)}
-                                    </button>
-                                </div>
+                            </div>
+                            <div className="specificProduct__BookOption3">
+                                <button disabled>
+                                <p> Paperback <br/> {((this.props.product.price) + 3).toFixed(2)} </p>
+                                </button>
+                            </div>
+                            <div className="specificProduct__BookOption4">
+                                <button disabled>
+                                Audiobook <br/> {this.props.product.price}
+                                </button>
+                            </div>
                         </div>
                         <div className="specificProduct__containerDescription">
                                 {this.props.product.description}  
@@ -175,9 +183,10 @@ class SpecificProduct extends React.Component {
                         </form>
                     </div>
                 </div>
-                {/* <div>
-                    <Link to="/review"><button>Create Review</button></Link>
-                </div> */}
+
+                <div>
+                    <ReviewShow {...this.props}/>
+                </div>
                 <div>
                     <Footer/>
                 </div>

@@ -18,13 +18,14 @@ import HeaderContainer from './header/header_container';
 import HomeContainer from './homepage/home_container';
 import SpecificProductContainer from './product/specific_product_container';
 import CartComponent from '../components/cart/cart_container'
-import ReviewContainer from '../components/reviews/review_container';
+import ReviewContainer from '../components/reviews/review_container'
 import AllContainer from '../components/product_pages/all/all_container';
 import BestSellersContainer from '../components/product_pages/best_sellers/best_sellers_container'
 import HumorousFictionContainer from '../components/product_pages/humorous_fiction/humorous_fiction_container'
 import ClassicsContainer from '../components/product_pages/classics/classics_container'
 import BusinessContainer from '../components/product_pages/business/business_container'
 import PhilosophyContainer from '../components/product_pages/philosophy/philosophy_container'
+import EditReviewContainer from '../components/reviews/edit_review_container';
 
 const App = () => (
   <div className="app">
@@ -34,7 +35,8 @@ const App = () => (
         <Route exact path="/logout" component={LogoutContainer} />
         <Route exact path="/products/:productId" component={SpecificProductContainer}/>
         <ProtectedRoute exact path="/carts" component={CartComponent}/>
-        <ProtectedRoute exact path="/review" component={ReviewContainer}/>
+        <ProtectedRoute exact path="/products/:productId/review" component={ReviewContainer}/>
+        <ProtectedRoute exact path="/products/:productId/review/:reviewId" component={EditReviewContainer}/>
         <Route exact path="/" component={HomeContainer}/>
         <Route exact path="/all" component={AllContainer}/>
         <Route exact path="/bestsellers" component={BestSellersContainer}/>

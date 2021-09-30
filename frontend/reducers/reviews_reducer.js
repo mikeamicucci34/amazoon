@@ -1,13 +1,14 @@
 import { RECEIVE_REVIEW, 
-        REMOVE_REVIEW } from '../actions/review_actions'
-import { RECEIVE_PRODUCT } from '../actions/product_actions'
+        REMOVE_REVIEW,
+        RECEIVE_REVIEWS } from '../actions/review_actions'
+// import { RECEIVE_PRODUCT } from '../actions/product_actions'
 
 
-const productsReducer = (oldState = {}, action) => {
+const reviewsReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
     const nextState = Object.assign({}, oldState)
     switch(action.type) {
-        case RECEIVE_PRODUCT:
+        case RECEIVE_REVIEWS:
             return  Object.assign(nextState, action.reviews)
         case RECEIVE_REVIEW:
             nextState[action.review.id] = action.review
@@ -20,4 +21,4 @@ const productsReducer = (oldState = {}, action) => {
     }
 }
 
-export default productsReducer;
+export default reviewsReducer;

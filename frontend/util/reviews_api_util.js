@@ -1,25 +1,36 @@
-// fetchReviews - for a specific product
-// createReview 
-// deleteReview - only if user id matches creator id
-
-export const fetchReviews = () => (
+export const fetchReviews = (productId) => (
     $.ajax({
         method: "GET",
-        url: `/api/reviews`
+        url: `/api/products/${productId}/reviews`
     })
 )
 
-export const postReview = (review) => (
+export const fetchReview = (review, productId) => (
+    $.ajax({
+        method: "GET",
+        url: `/api/products/${productId}/reviews/${review.id}`
+    })
+)
+
+export const postReview = (review, productId) => (
     $.ajax({
         method: "POST",
-        url: `/api/reviews/${review.id}`,
+        url: `/api/products/${productId}/reviews`,
         data: { review }
     })
 )
 
-export const destroyReview = (reviewId) => (
+export const destroyReview = (reviewId, productId) => (
     $.ajax({
         method: "DELETE",
-        url: `/api/reviews/${reviewId}`
+        url: `/api/products/${productId}/reviews/${reviewId}`
+    })
+)
+
+export const updateReview = (review, productId) => (
+    $.ajax({
+        method: "PATCH",
+        url: `/api/products/${productId}/reviews/${review.id}`,
+        data: { review }
     })
 )

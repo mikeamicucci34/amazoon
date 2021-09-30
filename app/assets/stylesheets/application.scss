@@ -792,7 +792,9 @@
     display: flex;
     margin-bottom: 20px;
     gap: 10px;
+    width: 70px
 }
+
 
 .specificProduct__containerBookOptions button {
     background-color: #fff;
@@ -803,6 +805,12 @@
     text-align: left;
     width: 100px;
 }
+
+.specificProduct__containerBookOptionsActive {
+    border-color: #FF8F00
+}
+
+
 
 .specificProduct__containerDescription{
     display: flex;
@@ -993,6 +1001,12 @@
     width: 300px;
     padding: 20px;
     gap: 10px;
+}
+
+.cart__componentCheckout h4{
+    color: green;
+    font-weight: bold;
+    font-size: 30px;
 }
 
 .cart__componentCheckoutButton{

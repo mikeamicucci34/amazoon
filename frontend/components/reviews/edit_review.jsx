@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-export default class Review extends React.Component {
+export default class EditReview extends React.Component {
     constructor(props) {
         super(props)
         this.state = this.props.review
@@ -14,9 +14,13 @@ export default class Review extends React.Component {
         return e => this.setState({ [field]: e.target.value })
     }
 
+    componentDidMount() {
+        this.props.fetchReviews(this.props.match.params.productId)
+    }
+
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createReview(this.state, this.props.productId)
+        this.props.updateReview(this.state, this.props.productId)
             .then(() => this.props.history.push(`/products/${this.state.product_id}`))
     }
     
