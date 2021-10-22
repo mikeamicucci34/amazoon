@@ -1,6 +1,6 @@
 import { ownerWindow } from '@material-ui/core';
 import { connect } from 'react-redux';
-import Review from '../reviews/review';
+import Review from '../reviews/create_review';
 import { postReview, fetchReviews } from '../../actions/review_actions';
 
 const mSTP = (state, ownProps) => {
@@ -8,7 +8,7 @@ const mSTP = (state, ownProps) => {
         review: {
             title: "",
             description: "",
-            rating: 0,
+            rating: 1,
             product_id: parseInt(ownProps.match.params.productId),
             user_id: state.entities.users.id
         },

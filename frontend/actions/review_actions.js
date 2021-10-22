@@ -2,7 +2,7 @@ import * as APIUtil from '../util/reviews_api_util';
 
 export const RECEIVE_REVIEWS = "RECEIVE_ALL_REVIEWS"
 export const RECEIVE_REVIEW = "RECEIVE_ALL_REVIEW"
-export const REMOVE_REVIEW = "CREATE_REVIEW"
+export const REMOVE_REVIEW = "REMOVE_REVIEW"
 
 
 export const receiveReview = (review) => ({
@@ -26,9 +26,9 @@ export const fetchReviews = (productId) => dispatch => {
     )
 }
 
-export const fetchReview = (productId) => dispatch => {
+export const fetchReview = (reviewId, productId) => dispatch => {
     return (
-        APIUtil.fetchReview(productId).then((review) => dispatch(receiveReview(review)))
+        APIUtil.fetchReview(reviewId, productId).then((review) => dispatch(receiveReview(review)))
     )
 }
 

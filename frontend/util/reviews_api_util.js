@@ -5,10 +5,10 @@ export const fetchReviews = (productId) => (
     })
 )
 
-export const fetchReview = (review, productId) => (
+export const fetchReview = (reviewId, productId) => (
     $.ajax({
         method: "GET",
-        url: `/api/products/${productId}/reviews/${review.id}`
+        url: `/api/products/${productId}/reviews/${reviewId}`
     })
 )
 

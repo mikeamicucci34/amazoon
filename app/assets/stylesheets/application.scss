@@ -577,9 +577,9 @@
 }
 
 
-// .homepage_footer{
-//     display: flex;
-// }
+.homepage_footer{
+    align-items: stretch;
+}
 
 //PRODUCT
 
@@ -733,6 +733,30 @@
     padding-top: 30px;
     padding-bottom: 30px;
     justify-content: center;
+    flex-direction: column;
+    // width: 70%;
+    // max-width: 700px;
+    // border-bottom: 2px solid #ddd;
+}
+
+.specificProduct__containerTop {
+    display: flex;
+    // justify-self: center;
+    // padding-top: 30px;
+    // padding-bottom: 30px;
+    justify-content: center;
+    // width: 70%;
+    // max-width: 700px;
+    // border-bottom: 2px solid #ddd;
+}
+.specificProduct__containerBottom {
+    display: flex;
+    // padding-right: 200px;
+    // width: 500px;
+    // justify-self: center;
+    // padding-top: 30px;
+    // padding-bottom: 30px;
+    justify-content: center;
     // width: 70%;
     // max-width: 700px;
     // border-bottom: 2px solid #ddd;
@@ -779,8 +803,7 @@
     color: lightgray;
 }
 
-.specificProduct__containerRating {
-}
+
 
 .specificProduct__containerImage{
     display: flex;
@@ -1119,9 +1142,85 @@
     flex-direction: column;
 }
 
+// Product Review Index
+.review__container{
+    display: flex;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    // justify-content: center;
+}
+
+.review__containerRightCol{
+       display: flex;
+       flex-direction: column; 
+       width: 700px;
+}
+
+.review__containerLeftCol{
+       display: flex; 
+       flex-direction: column;
+       width: 400px
+}
 
 
+// create review form
 
+input[type="radio"]{
+    display: none;
+}
 
+.review__containerCustomerReviewNew{
+    margin-bottom: 30px;
+}
 
+//Progress Bars
+
+.progress_bars {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+
+.progress_bars_individual {
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+.progress_bars_individual p{
+    width: 140px;
+}
+
+//Mapped Reviews
+.mappedReviews{
+    width: 500px;
+}
+
+.deleteEditReviewContainer{
+    display: flex;
+}
+
+.reviewPersonContainer{
+    display: flex;
+}
+
+.review__reviewContentContainer{
+    margin-bottom: 25px;
+}
+
+.reviewPersonUsername{
+    margin-left: 10px;
+}
+
+.reviewPersonIcon{
+    background: url(../images/ghost.png);
+    background-size: 40px;
+    height: 40px;
+    width: 40px;
+    border-radius: 5px;
+}
+
+.reviewDescription{
+    margin-bottom: 15px;
+}
 

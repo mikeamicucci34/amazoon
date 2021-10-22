@@ -8,7 +8,6 @@ const productsReducer = (oldState = {}, action) => {
         case RECEIVE_ALL_PRODUCTS:
             return action.products 
         case RECEIVE_PRODUCT:
-            // debugger;
             nextState[action.product.id] = action.product
             return nextState
         default:

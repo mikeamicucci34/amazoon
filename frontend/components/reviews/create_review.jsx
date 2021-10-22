@@ -3,15 +3,10 @@ import { Link } from 'react-router-dom';
 import StarIcon from "@material-ui/icons/Star";
 import StarBorderIcon from "@material-ui/icons/StarBorder";
 
-export default class EditReview extends React.Component {
+export default class Review extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            id: null,
-            title: "",
-            rating: 1,
-            description: ""
-        }
+        this.state = this.props.review
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
@@ -19,27 +14,23 @@ export default class EditReview extends React.Component {
         return e => this.setState({ [field]: e.target.value })
     }
 
-    componentDidMount() {
-        this.props.fetchReview(this.props.reviewId, this.props.productId)
-        .then(res => this.setState(() => {
-            return { 
-                id: res.review.id,
-                title: res.review.title,
-                rating: res.review.rating,
-                description: res.review.description    
-            }
-        }))
-    }
-
     handleSubmit(e) {
+        debugger;
         e.preventDefault();
-        this.props.updateReview(this.state, this.props.productId)
+        this.props.createReview(this.state, this.props.productId)
             .then(() => this.props.history.push(`/products/${this.props.productId}`))
     }
     
     render() {
 
-        // if (this.state.review.length === 0) return null; 
+        // for (let i = 1; i <= 5; i++) {
+        //     const num = i
+        //     const stars = num <= this.state.rating ? (
+        //          <StarIcon/>
+        //         ) : (
+        //         <StarBorderIcon/>
+        //         )
+        // }
 
         const starRatings = (
             <div>
@@ -69,10 +60,8 @@ export default class EditReview extends React.Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <div>
-                        <p>Overall Rating</p>
-                        {starRatings}
-                    </div>
+                    <p>Overall Rating</p>
+                    {starRatings}
                     <div>
                         <p>Add a Headline</p>
                         <input type="text"

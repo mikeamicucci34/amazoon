@@ -1,75 +1,82 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import StarIcon from "@material-ui/icons/Star";
+import StarBorderIcon from "@material-ui/icons/StarBorder";
 
 export default class ReviewShow extends React.Component {
     constructor(props) {
         super(props)
-        // this.destroyReview = this.destroyReview.bind(this)
+    }  
+
+    handleDelete(e) {
+        e.preventDefault();
+        this.props.destroyReview(this.props.review.id, this.props.productId)
     }
 
-    destroyReview() {
-        this.props.destroyReview(review.id, this.props.productId);
-        this.setState({state: this.state})
-    }
-2
     render() {
-        debugger;
-        return(
-            <div>
-                <div className="review__container">
-                    <div className="review__containerLeftCol">
-                        <div className="review__containerCustomerReviewBars">
+        if (this.props.users === undefined) return null
 
+        const { review, productId, currentUser } = this.props
+
+
+        const deleteEdit = currentUser ? currentUser.id === review.user_id ? 
+                            <>
+                                <div className="deleteReview">
+                                    <button onClick={(e) => this.handleDelete(e)}>Delete</button>
+                                </div>
+                                <div className="editReview">
+                                    <Link to={`/products/${productId}/review/${review.id}`}>
+                                        <button>Edit</button>
+                                    </Link>
+                                </div>
+                            </>
+                            : 
+                            null 
+                            :
+                            null            
+
+        const username = this.props.users.filter(user => user.id === review.user_id)[0].username
+
+        const reviewStars = [];
+
+        if (!review) return null;
+
+        for (let i = 0; i < 5; i++) {
+            if (i < review.rating) {
+                reviewStars.push(<StarIcon key={i}/>);
+            } else {
+                reviewStars.push(<StarBorderIcon key={i}/>);
+            }
+        }
+
+       
+
+        return(
+            <>
+                <div className="review__reviewContentContainer">
+                    <div className="reviewPersonContainer">
+                        <div className="reviewPersonIcon">
                         </div>
-                        <div className="review__containerCustomerReviewNew">
-                            <div>
-                                <h3>Review this Product</h3>
-                                <p>Share your thoughts with other customers</p>
-                                <Link to={`/products/${this.props.productId}/review`}><button>Write a Customer Review</button></Link>
-                            </div>
+                        <div className="reviewPersonUsername">
+                            {username}
                         </div>
                     </div>
-                    <br/>
-                    <div className="review__containeRightCol">
-                        <div className="review__reviewContentContainer">
-                            {this.props.reviews.map(review => (
-                                <>
-                                    <div>
-                                        <div>
-                                            icon of person
-                                        </div>
-                                        <div>
-                                            {this.props.currentUser.username}
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div>
-                                            {review.rating}
-                                        </div>
-                                        <div>
-                                            {review.title}
-                                        </div>
-                                    </div>
-                                    <div>
-                                        {review.description}
-                                    </div>
-                                    {this.props.currentUser.id === review.user_id ? 
-                                        <>
-                                            <button onClick={() => this.props.destroyReview(review.id, this.props.productId).then(() => this.forceUpdate())}>Delete</button>
-                                            <Link to={`/products/${this.props.productId}/review/${review.id}`}>
-                                                <button>Edit</button>
-                                            </Link>
-                                        </>
-                                        : 
-                                        null                                      
-                                        }
-                                </>
-                            ))}
-                            
+                    <div>
+                        <div>
+                            {reviewStars}
                         </div>
+                        <h3>
+                            {review.title}
+                        </h3>
+                    </div>
+                    <div className="reviewDescription">
+                        {review.description}
+                    </div>
+                    <div className="deleteEditReviewContainer">
+                        {deleteEdit}
                     </div>
                 </div>
-            </div>
+            </>
         )
     }
 }
