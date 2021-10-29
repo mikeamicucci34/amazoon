@@ -89,7 +89,7 @@ export default class Search extends React.Component {
                         </div>
                         <div className="productPage__homeSideBarBox2">
                             <h4>Amazon Prime</h4>
-                            <p>(prime image)</p>
+                            <img src="https://amazoon-seeds.s3.amazonaws.com/prime_logo.png"/>
                         </div>
                         <div className="productPage__homeSideBarBox3">
                             <h4>Climate Pledge Friendly</h4>
