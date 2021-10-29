@@ -26,7 +26,6 @@ class HeaderModal extends React.Component {
     }
 
     render() {
-        // debugger;
 
         const { currentUser, logout } = this.props
 

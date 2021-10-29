@@ -46,9 +46,9 @@ export default class EditReview extends React.Component {
                 {[1,2,3,4,5].map((num, i) => {
                     const starnum = i + 1
                     const stars = starnum <= this.state.rating ? (
-                    <StarIcon/>
+                    <StarIcon className={'star-ratings'}/>
                     ) : (
-                    <StarBorderIcon/>
+                    <StarBorderIcon className={'star-ratings'}/>
                     )
                 return (
                     <>
@@ -67,25 +67,25 @@ export default class EditReview extends React.Component {
         )
 
         return (
-            <div>
+            <div className="reviewForm"> 
                 <form onSubmit={this.handleSubmit}>
-                    <div>
-                        <p>Overall Rating</p>
+                    <div className="overallRating">
+                        <h3>Overall Rating</h3>
                         {starRatings}
                     </div>
-                    <div>
-                        <p>Add a Headline</p>
+                    <div className="ratingHeadline">
+                        <h3>Add a Headline</h3>
                         <input type="text"
                                 value={this.state.title}
                                 onChange={this.action('title')}/>
                     </div>
-                    <div>
-                        <p>Add a written review</p>
-                        <input type="text"
+                    <div className="writtenReview">
+                        <h3>Add a written review</h3>
+                        <textarea rows={'15'}
                                 value={this.state.description}
                                 onChange={this.action('description')}/>
                     </div>
-                    <div>
+                    <div className="submitReview">
                         <button type="submit">Submit Review</button>
                     </div>
                 </form>

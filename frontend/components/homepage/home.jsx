@@ -31,7 +31,7 @@ export default class Homepage extends React.Component {
             <div className="home">
                 <div className="home__container">
                     <div className="header__container"> 
-                        <Header key={3}/>
+                        <Header {...this.props}/>
                     </div>
                     <div>
                         <SubHeader/>
@@ -148,11 +148,11 @@ export default class Homepage extends React.Component {
                                 </div>
                             </div> */}
                         </div>
-                        <div className="homepage_footer">
-                            <Footer/>
-                        </div>
+                        
                     </div>
-                    
+                    <div className="homepage_footer">
+                            <Footer/>
+                    </div>
                 </div>
             </div>
         )

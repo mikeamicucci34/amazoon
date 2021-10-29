@@ -72,9 +72,6 @@ class SpecificProduct extends React.Component {
 
     render() {
 
-        // ratingsCount = if (this.props.reviews) {
-
-        // }
 
         if (this.props.product === undefined) return null
 
@@ -105,9 +102,9 @@ class SpecificProduct extends React.Component {
                                 <div className="specificProduct__containerAuthor">
                                     <pre>by {this.props.product.author} (Author)  |  Format: Kindle Edition </pre>
                                 </div>
-                                <div className="specificProduct__containerRating">
-                                    <pre>⭐⭐⭐⭐ 23,280 ratings </pre>
-                                </div>
+                                 <div className="specificProduct__containerRating">
+                                    
+                                </div> 
                                 <hr/>
                             </div>
                             <div className="specificProduct__containerBookOptions">
@@ -201,41 +198,7 @@ class SpecificProduct extends React.Component {
                     </div>
                     <div className="specificProduct__containerBottom">
                         <div className="review__container">
-                            <div className="review__containerLeftCol">
-                                <div className="review__containerCustomerReviewNew">
-                                    <div>
-                                        <h3>Review this Product</h3>
-                                        <p>Share your thoughts with other customers</p>
-                                        <Link to={`/products/${this.props.productId}/review`}><button>Write a Customer Review</button></Link>
-                                    </div>
-                                </div>
-                                <div className="progress_bars">
-                                    <div className="progress_bars_individual">
-                                        <p>5 star</p>
-                                        <ProgressBar className="progress_bars5" bgcolor={'black'} completed={60}/> 
-                                    </div>
-                                    <div className="progress_bars_individual">
-                                        <p>4 star</p>
-                                        <ProgressBar bgcolor={'black'} completed={60}/> 
-                                    </div>
-                                     <div className="progress_bars_individual">
-                                        <p>3 star</p>
-                                        <ProgressBar bgcolor={'black'} completed={60}/> 
-                                    </div>
-                                    <div className="progress_bars_individual">
-                                        <p>2 star</p>
-                                        <ProgressBar bgcolor={'black'} completed={60}/> 
-                                    </div>
-                                    <div className="progress_bars_individual">
-                                        <p>1 star</p>
-                                        <ProgressBar bgcolor={'black'} completed={60}/> 
-                                    </div>
-                                </div>
-                            </div>
-                            <br/>
-                            <div className="review__containerRightCol">
-                                <ReviewIndexContainer product={this.props.product}/>
-                            </div>
+                            <ReviewIndexContainer product={this.props.product}/>
                         </div>
                     </div>
                 </div>

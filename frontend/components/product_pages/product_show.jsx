@@ -9,7 +9,6 @@ class ProductShow extends React.Component {
 
     render() {
     const { product } = this.props
-        // debugger;
         return (
             <div>
                 <div className="productPage__homeProductDisplay">
@@ -26,13 +25,14 @@ class ProductShow extends React.Component {
                                 </div>
                             </Link>
                             <div className="productPage__homeProductDisplayItemRating">
-                                <pre>⭐⭐⭐⭐ 23,280 ratings </pre>
+                                
                             </div>
                             <div className="productPage__homeProductDisplayItemPrice">
                                 {product.price}
                             </div>
                             <div className="productPage__homeProductDisplayItemPrice">
-                                (prime logo) FREE Delivery Fri, Sep 17
+                                <img src="https://amazoon-seeds.s3.amazonaws.com/prime_logo.png"/> 
+                               <p> FREE Delivery Fri, Sep 17 </p>
                             </div>
                         </div>
                     </div>

@@ -9,12 +9,27 @@ import HeaderModal from '../header/header_modal';
 class Header extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            searchQuery: " "
+        }
+
+        this.handleSearch = this.handleSearch.bind(this)
+    }
+
+    action() {
+        return e => this.setState({ searchQuery: e.target.value })
+    }
+
+    handleSearch(e) {
+        e.preventDefault();
+        if (!this.state.searchQuery) {
+            this.setState({ searchQuery: " "})
+        }
+        this.props.fetchProducts(this.state.searchQuery)
+            .then(() => this.props.history.push(`/search/${this.state.searchQuery}`))
     }
 
 
-
-    
-    
     render() {
         const { currentUser, logout } = this.props
 
@@ -43,11 +58,17 @@ class Header extends React.Component {
                         </span>
                     </div>
                 </div>
-                <div className="header__search">
-                    <input type="text"
-                            className="header__searchInput"/>
-                    <SearchIcon className="header__searchIcon"/>
-                </div>
+                
+                    <form onSubmit={this.handleSearch} className="header__search">
+                        <input type="text"
+                                value={this.state.searchQuery}
+                                onChange={this.action()}
+                                className="header__searchInput"
+                                />
+                    
+                        <SearchIcon className="header__searchIcon"/>
+                    </form>
+                
                 <div className="header__nav">
                     <div>
                         <HeaderModal currentUser={currentUser} logout={logout}/>

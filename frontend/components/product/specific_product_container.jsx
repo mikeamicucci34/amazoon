@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { fetchProduct } from '../../actions/product_actions';
+import { fetchProduct, fetchProducts } from '../../actions/product_actions';
 import { addCartItem } from '../../actions/cart_actions';
 import SpecificProduct from './specific_product';
 import { logout, fetchUsers } from '../../actions/session_actions'
@@ -23,7 +23,8 @@ const mDTP = dispatch => ({
     fetchReviews: (productId) => dispatch(fetchReviews(productId)),
     destroyReview: (reviewId, productId) => dispatch(destroyReview(reviewId, productId)),
     fetchProduct: (productId) => dispatch(fetchProduct(productId)),
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    fetchProducts: (query) => dispatch(fetchProducts(query))
 })
 
 export default connect(mSTP, mDTP)(SpecificProduct);

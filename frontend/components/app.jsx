@@ -26,6 +26,7 @@ import ClassicsContainer from '../components/product_pages/classics/classics_con
 import BusinessContainer from '../components/product_pages/business/business_container'
 import PhilosophyContainer from '../components/product_pages/philosophy/philosophy_container'
 import EditReviewContainer from '../components/reviews/edit_review_container';
+import SearchContainer from '../components/search/search_container'
 
 const App = () => (
   <div className="app">
@@ -44,6 +45,7 @@ const App = () => (
         <Route exact path="/classics" component={ClassicsContainer}/>
         <Route exact path="/business" component={BusinessContainer}/>
         <Route exact path="/philosophy" component={PhilosophyContainer}/>
+        <Route exact path="/search/:searchQuery" component={SearchContainer}/>
       </Switch>
   </div>
 );

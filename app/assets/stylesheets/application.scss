@@ -59,6 +59,7 @@
     height: 22px;
     background-color: #cd9042;
     border-radius: 2px;
+    margin-left: -34px;
 }
 
 .header__searchInput {
@@ -1083,6 +1084,11 @@
     gap: 5px;
 }
 
+.productPage__homeSideBarBox2 img {
+    height: 100px;
+    width: 100px;
+}
+
 .productPage__homeSideBarBox3{
     display: flex;
     align-items: flex-start;
@@ -1142,6 +1148,19 @@
     flex-direction: column;
 }
 
+.productPage__homeProductDisplayItemPrice{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    
+}
+
+.productPage__homeProductDisplayItemPrice img{
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+}
+
 // Product Review Index
 .review__container{
     display: flex;
@@ -1185,6 +1204,7 @@ input[type="radio"]{
     display: flex;
     align-items: center;
     height: 50px;
+    width: 300px;
 }
 
 .progress_bars_individual p{
@@ -1202,6 +1222,7 @@ input[type="radio"]{
 
 .reviewPersonContainer{
     display: flex;
+    align-items: center;
 }
 
 .review__reviewContentContainer{
@@ -1212,11 +1233,9 @@ input[type="radio"]{
     margin-left: 10px;
 }
 
-.reviewPersonIcon{
-    background: url(../images/ghost.png);
-    background-size: 40px;
-    height: 40px;
-    width: 40px;
+.reviewPersonIcon img{
+    height: 30px;
+    width: 30px;
     border-radius: 5px;
 }
 
@@ -1224,3 +1243,84 @@ input[type="radio"]{
     margin-bottom: 15px;
 }
 
+.reviewButton button{
+    background: #FFF;
+    border-radius: 3px;
+    border-color: #D5D9D9;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    padding: 0;
+    text-align: center;
+    text-decoration: none !important;
+    vertical-align: middle;
+    width: 300px;
+    margin-top: 10px;
+    height: 25px;
+}
+
+.editdeleteButton button {
+    background: #FFF;
+    border-radius: 3px;
+    border-color: #D5D9D9;
+    cursor: pointer;
+    align-content: center;
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    width: 70px;
+    height: 30px;
+    margin: 10px
+}
+
+//Edit / create Review
+.star-ratings {
+    color: #FF9900;
+}
+
+.reviewForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overallRating{
+    margin: 20px 10px 10px 10px;
+}
+
+.ratingHeadline{
+    margin: 20px 10px 10px 10px;
+}
+
+.ratingHeadline input{
+    width: 500px;
+}
+
+.writtenReview{
+    margin: 20px 10px 10px 10px;
+}
+
+.writtenReview textarea{
+    width: 500px;
+}
+
+.submitReview{
+    margin: 20px 10px 10px 10px;
+}   
+
+.submitReview button{
+    background: #FFD814;
+    border-color: #FCD200;
+    width: 150px;
+    height: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+}  
+
+// search return 
+
+.noMatches{
+    size: 30px;
+    align-items: center;
+}

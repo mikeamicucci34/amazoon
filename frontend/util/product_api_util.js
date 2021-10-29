@@ -6,9 +6,10 @@ export const fetchProduct = (productId) => (
     })
 )
 
-export const fetchProducts = () => (
+export const fetchProducts = (query) => (
     $.ajax ({
         method: "GET",
         url: `/api/products`,
+        data: { query }
     })
 )

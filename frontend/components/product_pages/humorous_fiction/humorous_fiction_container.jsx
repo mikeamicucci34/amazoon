@@ -10,7 +10,7 @@ const mSTP = state => ({
 })
 
 const mDTP = dispatch => ({
-    fetchProducts: () => dispatch(fetchProducts()),
+    fetchProducts: (query) => dispatch(fetchProducts(query)),
     logout: () => dispatch(logout()),
 })
 

@@ -21,10 +21,10 @@ export default class ReviewShow extends React.Component {
 
         const deleteEdit = currentUser ? currentUser.id === review.user_id ? 
                             <>
-                                <div className="deleteReview">
+                                <div className="editdeleteButton">
                                     <button onClick={(e) => this.handleDelete(e)}>Delete</button>
                                 </div>
-                                <div className="editReview">
+                                <div className="editdeleteButton">
                                     <Link to={`/products/${productId}/review/${review.id}`}>
                                         <button>Edit</button>
                                     </Link>
@@ -43,9 +43,9 @@ export default class ReviewShow extends React.Component {
 
         for (let i = 0; i < 5; i++) {
             if (i < review.rating) {
-                reviewStars.push(<StarIcon key={i}/>);
+                reviewStars.push(<StarIcon key={i} className={'star-ratings'} />);
             } else {
-                reviewStars.push(<StarBorderIcon key={i}/>);
+                reviewStars.push(<StarBorderIcon key={i} className={'star-ratings'}/>);
             }
         }
 
@@ -56,6 +56,7 @@ export default class ReviewShow extends React.Component {
                 <div className="review__reviewContentContainer">
                     <div className="reviewPersonContainer">
                         <div className="reviewPersonIcon">
+                            <img src="https://amazoon-seeds.s3.amazonaws.com/linkedinOutline.jpeg"/>
                         </div>
                         <div className="reviewPersonUsername">
                             {username}

@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom'
 import Homepage from './home';
 import { logout } from '../../actions/session_actions';
 import { fetchProducts } from '../../actions/product_actions'
@@ -12,7 +13,7 @@ const mSTP = state => ({
 
 const mDTP = dispatch => ({
     logout: () => dispatch(logout()),
-    fetchProducts: () => dispatch(fetchProducts())
+    fetchProducts: (query) => dispatch(fetchProducts(query))
 })
 
-export default connect(mSTP, mDTP)(Homepage);
+export default withRouter(connect(mSTP, mDTP)(Homepage));
