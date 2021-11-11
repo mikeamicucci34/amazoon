@@ -15,6 +15,17 @@ class Api::CartsController < ApplicationController
         
     end
 
+    def update
+        
+        @cart_item = ShoppingCart.find(params[:item][:id])
+        
+        if @cart_item.update(cart_params) && @cart_item
+            render :show 
+        else
+            render json: ['Cannot update cart'], status: 422
+        end
+    end
+
     def show
         @cart_item = ShoppingCart.find(params[:id])
         render :show   

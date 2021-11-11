@@ -32,7 +32,6 @@ class Cart extends React.Component {
     }
 
     render() {
-
         let totalCost = 0 
         this.props.items.forEach( item => {
             totalCost += (item.price * item.quantity)
@@ -42,7 +41,6 @@ class Cart extends React.Component {
         this.props.items.forEach( item => {
             totalQuantity += item.quantity
         })
-
 
         return (
             <div>
@@ -63,7 +61,12 @@ class Cart extends React.Component {
                                 { (this.props.items.length > 0) ?
                                     this.props.items.map( (item, idx) => {
                                            return ( 
-                                           <CartItem removeCartItem={this.props.removeCartItem} product={item} key={idx} fetchCartItems={this.props.fetchCartItems} />
+                                           <CartItem 
+                                                currentUser={this.props.currentUser} 
+                                                removeCartItem={this.props.removeCartItem} 
+                                                product={item} key={item.quantity} 
+                                                fetchCartItems={this.props.fetchCartItems}
+                                                appendCartItem={this.props.appendCartItem} />
                                            )
                                     }) :
                                     <div>

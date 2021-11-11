@@ -3,6 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import RoomOutlinedIcon from '@material-ui/icons/RoomOutlined';
+// import IconButton from '@material-ui/icons/IconButton';
 // import AmazonLogo from '../../../imgs/amazon_logo.png'
 import HeaderModal from '../header/header_modal';
 
@@ -42,7 +43,7 @@ class Header extends React.Component {
                 <Link to="/" style={{ textDecoration: 'none' }}> 
                     <div className="header__logo">
                         {/* <img src={'../../../imgs/amazon_logo.png'}/> */}
-                        <img src="https://amazoon-seeds.s3.amazonaws.com/amazon_logo.png"/>
+                        <img src="https://amazoon-seeds.s3.amazonaws.com/Amazoon2.png"/>
                     </div>
                 </Link>
                 <div className="header__nav">
@@ -65,8 +66,12 @@ class Header extends React.Component {
                                 onChange={this.action()}
                                 className="header__searchInput"
                                 />
-                    
-                        <SearchIcon className="header__searchIcon"/>
+                            <button onClick={(e) => this.handleSearch} className="header__searchIcon">
+                                <SearchIcon onClick={() => this.handleSearch} />
+                            </button>
+                            {/* <button onClick={(e) => this.handleSearch}>
+                                <img src={window.mag} className="header__searchIcon" id="mag" />
+                            </button> */}
                     </form>
                 
                 <div className="header__nav">

@@ -45,3 +45,9 @@ export const fetchCartItems = () => dispatch => {
         APIUtil.fetchCartItems().then((cart_items) => dispatch(receiveCartItems(cart_items)))
     )
 }
+
+export const appendCartItem = (item) => dispatch => {
+    return (
+        APIUtil.appendCartItem(item).then((cart_item) => dispatch(receiveCartItem(cart_item)))
+    )
+}

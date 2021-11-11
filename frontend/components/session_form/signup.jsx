@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import shortid from "shortid";
+import PriorityHighIcon from '@material-ui/icons/PriorityHigh';
 
 class Signup extends React.Component {
     constructor(props) {
@@ -9,7 +10,8 @@ class Signup extends React.Component {
             username: '',
             email: '',
             password: '',
-            reenter_password: ''
+            reenter_password: '',
+            errorsArray: null
         }
         this.handleSubmit = this.handleSubmit.bind(this)
     }
@@ -37,20 +39,22 @@ class Signup extends React.Component {
        this.props.clearSessionErrors();
     }
 
-    showErrors() {
-
-        return (
-            <ul className="login__errors"> 
-                {this.props.errors.map(error => (
-                    <div key={shortid.generate()}>
-                        {error}
-                    </div>
-                ))}
-            </ul>
-        )
-    }
-
     render() {
+        const { errors } = this.props
+        const keyWords = ['Username', 'Email','Password']
+        let errorsObject = {};
+    
+        if (errors.length > 0) {    
+            for (let i = 0; i < errors.length; i++) {
+                for (let j = 0; j < keyWords.length; j++) {
+                    if (errors[i].includes(keyWords[j])) {
+                        errorsObject[keyWords[j]] = `! ${errors[i]}`
+                    }
+                }
+            }
+        }
+            
+
         return(
             <div className="signup">
                 <Link to='/'>
@@ -59,7 +63,7 @@ class Signup extends React.Component {
                         src="http://media.corporate-ir.net/media_files/IROL/17/176060/Oct18/Amazon%20logo.PNG"/>
                </Link>
                <div className="signup__errors">
-                   {this.showErrors()}
+                   {/* {this.showErrors()} */}
                 </div>
                     <div className='signup__container'>
                         <h1>Create account</h1>
@@ -68,15 +72,32 @@ class Signup extends React.Component {
                                 <input type="text"
                                         value={this.state.username}
                                         onChange={this.action("username")}/>
+                                
+                                {this.props.errors.length > 0 ? 
+                                    <div className="login__errors">
+                                    {errorsObject[keyWords[0]]}
+                                    </div> : null}
+                                
+
                                 <h5>Email</h5>
                                 <input type="text"
                                         value={this.state.email}
                                         onChange={this.action("email")}/>
+                                {this.props.errors.length > 0 ? 
+                                    <div className="login__errors">
+                                    {errorsObject[keyWords[1]]}
+                                    </div> : null}
+
                                 <h5>Password</h5>
                                 <input type="password"
                                         value={this.state.password}
                                         onChange={this.action("password")}/>
-                                    <p>Passwords must be at least 6 characters.</p>
+                                <p>Passwords must be at least 6 characters.</p>
+                                {this.props.errors.length > 0 ? 
+                                    <div className="login__errors">
+                                    {errorsObject[keyWords[2]]}
+                                    </div> : null}
+
                                 <h5>Re-enter Password</h5>
                                 <input type="password"
                                         value={this.state.reenter_password}

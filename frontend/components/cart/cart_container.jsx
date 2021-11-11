@@ -3,6 +3,7 @@ import Cart from '../cart/cart';
 import { addCartItem, removeCartItem, fetchCartItem, fetchCartItems } from '../../actions/cart_actions'
 import { logout } from '../../actions/session_actions'
 import { fetchProducts } from '../../actions/product_actions'
+import { appendCartItem } from '../../actions/cart_actions'
 
 
 const mSTP = state => ({
@@ -16,7 +17,8 @@ const mDTP = dispatch => ({
     fetchCartItem: (item) => dispatch(fetchCartItem(item)),
     fetchCartItems: () => dispatch(fetchCartItems()),
     logout: () => dispatch(logout()),
-    fetchProducts: (query) => dispatch(fetchProducts(query))
+    fetchProducts: (query) => dispatch(fetchProducts(query)),
+    appendCartItem: (item) => dispatch(appendCartItem(item))
 })
 
 export default connect(mSTP, mDTP)(Cart);

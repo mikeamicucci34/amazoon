@@ -27,3 +27,13 @@ export const fetchCartItem = (item) => (
         url: `/api/carts/${item.id}`,
     })
 )
+
+export const appendCartItem = (item) => {
+    return (
+        $.ajax({
+            method: "PATCH",
+            url: `/api/carts/${item.product_id}`,
+            data: {item}
+        })
+    )
+}

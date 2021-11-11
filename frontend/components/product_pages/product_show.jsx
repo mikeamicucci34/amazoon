@@ -32,7 +32,7 @@ class ProductShow extends React.Component {
                             </div>
                             <div className="productPage__homeProductDisplayItemPrice">
                                 <img src="https://amazoon-seeds.s3.amazonaws.com/prime_logo.png"/> 
-                               <p> FREE Delivery Fri, Sep 17 </p>
+                               <p> FREE Delivery</p>
                             </div>
                         </div>
                     </div>

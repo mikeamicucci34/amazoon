@@ -28,12 +28,14 @@ class SpecificProduct extends React.Component {
         this.changeQty = this.changeQty.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.colorChange = this.colorChange.bind(this)
+        this.checkCartContent = this.checkCartContent.bind(this)
     }
 
     componentDidMount() {
         this.props.fetchProduct(this.props.match.params.productId);
         this.props.fetchReviews(this.props.match.params.productId);
         this.props.fetchUsers();
+        this.props.fetchCartItems();
     }
 
     componentWillReceiveProps(nextProps) {
@@ -49,17 +51,52 @@ class SpecificProduct extends React.Component {
         this.setState({ quantity: e.target.value })
     }
 
+    // flag to indicate whether an object is present in the current cart
+    checkCartContent() {
+        let variable = false;
+        this.props.cartItems.forEach((cartItem) => {
+            if (cartItem.product_id === this.props.product.id) {
+                variable = true;
+            } else {
+                false;
+            }
+        });
+        return variable;
+    }
+
+
     handleSubmit(e) {
         e.preventDefault();
-        if (this.props.currentUser === undefined){
-            () => this.props.history.push("/carts")
-        } else {
+
+        let cartId;
+        let cartQuantity;
+        this.props.cartItems.forEach((cartItem) => {
+            if (cartItem.product_id === this.props.product.id) {
+                cartId = cartItem.id
+                cartQuantity = cartItem.quantity
+            }
+        })
+        
+        const updatedCart = {
+            id: cartId,
+            quantity: parseFloat(this.state.quantity) + parseFloat(cartQuantity),
+            user_id: this.props.currentUser.id,
+            product_id: this.props.product.id
+        }
+
         const cart = {
             quantity: this.state.quantity,
             user_id: this.props.currentUser.id,
-            product_id: this.props.productId
+            product_id: this.props.product.id
         }
-        this.props.addCartItem(cart).then(() => this.props.history.push("/carts"))
+
+    
+        if (this.props.currentUser === undefined){
+            () => this.props.history.push("/carts")
+        } else if (this.checkCartContent()) {
+            this.props.appendCartItem(updatedCart).then(() => this.props.history.push("/carts"))
+        } else {
+            this.props.addCartItem(cart).then(() => this.props.history.push("/carts"))
         }
     }
 

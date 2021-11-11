@@ -1,6 +1,7 @@
 import React from 'react'
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import { Link } from 'react-router-dom';
 
 function Footer() {
     return (
@@ -10,12 +11,12 @@ function Footer() {
                     <p>Meet the creator</p>
                 </div >
                 <div className="footertop__componentGithub">
-                    <a href="https://github.com/mikeamicucci34">
+                    <a target="_blank" href="https://github.com/mikeamicucci34">
                         <GitHubIcon/>
                     </a>
                 </div>
                 <div className="footertop__componentLinkedIn">
-                    <a href="https://www.linkedin.com/in/michael-amicucci-428bb9122/">
+                    <a target="_blank" href="https://www.linkedin.com/in/michael-amicucci-428bb9122/">
                         <LinkedInIcon/>
                     </a>
                 </div>
@@ -61,12 +62,16 @@ function Footer() {
                     <p>Help</p>
                 </div>
             </div>
-            <div className="footerbottom__component">
+            
+                <div className="footerbottom__component">
                 <hr/>
                 <div className="footerbottom__contents">
-                <img src="https://service-client.org/wp-content/uploads/Logo-Amazon-300x144.png"/>
+                <Link to="/" style={{ textDecoration: 'none' }}>
+                    <img src="https://amazoon-seeds.s3.amazonaws.com/Amazoon2.png"/>
+                </Link>
                 </div>
-            </div>
+                </div>
+            
         </div>
     )
 }

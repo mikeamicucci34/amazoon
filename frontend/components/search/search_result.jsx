@@ -81,6 +81,7 @@ export default class Search extends React.Component {
                 </div>
                 <div className="productPage__home">
                     <div className="productPage__homeSideBar">
+                        <h3>Section Coming Soon!</h3>
                         <div className="productPage__homeSideBarBox1">
                             <h4>Condition</h4>
                             <p>New</p>

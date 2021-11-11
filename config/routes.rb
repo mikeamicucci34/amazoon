@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :products, only: [:show, :index] do
       resources :reviews, only: [:index, :destroy, :create, :update, :show]
     end
-    resources :carts, only: [:index, :show, :destroy, :create]
+    resources :carts, only: [:index, :show, :destroy, :create, :update]
     
 
     # get '/login', to: 'sessions#show'

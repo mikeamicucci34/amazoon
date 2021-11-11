@@ -9,6 +9,7 @@ import {
   BrowserRouter
 } from 'react-router-dom';
 
+{/* <link rel="icon" type="image/png" href="https://amazoon-seeds.s3.amazonaws.com/amazoon_favicon.jpeg" /> */}
 import Header from './header/header';
 import LoginContainer from './session_form/login_container'
 import SignupContainer from './session_form/signup_container'
