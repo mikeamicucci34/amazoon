@@ -1,6 +1,6 @@
 # README
 
-## Welcome to [Amazoon](https://dashboard.heroku.com/apps/amazoonmia)!
+## Welcome to [Amazoon](https://amazoonmia.herokuapp.com/#/)!
 Amazoon is a scaled down replication of Amazon.com. The design aspects of Amazoon parallel those on the original Amazon site; however, the product offerings on Amazoon are limited to the books I've enjoyed reading over the past couple of years. The clone is meant to show my CRUD design capabilities and implementation. I hope you enjoy!
 
 ## Homepage
