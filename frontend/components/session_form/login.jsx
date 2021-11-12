@@ -36,10 +36,10 @@ class Login extends React.Component {
 
     showErrors() {
         return (
-            <ul className="login__errors">
+            <ul>
                 {this.props.errors.map(error => (
-                    <div key={shortid.generate()}>
-                        {error}
+                    <div key={shortid.generate()} className="login__errors">
+                        ! {error}
                     </div>
                 ))}
             </ul>
@@ -63,9 +63,6 @@ class Login extends React.Component {
                         className='login__logo'
                         src="http://media.corporate-ir.net/media_files/IROL/17/176060/Oct18/Amazon%20logo.PNG"/>
                </Link>
-               <div className="login__errors">
-                   {this.showErrors()}
-                </div>
                     <div className='login__container'>
                         <h1>Sign-In</h1>
                             <form onSubmit={this.handleSubmit}>
@@ -77,6 +74,9 @@ class Login extends React.Component {
                                 <input type="password"
                                         value={this.state.password}
                                         onChange={this.action("password")}/>
+                                
+                                    {this.showErrors()}
+                                
                                 <button type='submit' className="login__signInButton">Sign-In</button>
                             </form>
                                 <button className="login__signInButton" onClick={this.engageDemoUser}>Demo User</button>

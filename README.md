@@ -3,6 +3,9 @@
 ## Welcome to [Amazoon](https://amazoonmia.herokuapp.com/#/)!
 Amazoon is a scaled down replication of Amazon.com. The design aspects of Amazoon parallel those on the original Amazon site; however, the product offerings on Amazoon are limited to the books I've enjoyed reading over the past couple of years. The clone is meant to show my CRUD design capabilities and implementation. I hope you enjoy!
 
+## Search Function
+
+
 ## Homepage
 The homepage highlights some of the product offerings with clickable links to their respective product pages.
 ![alt text](https://amazoon-seeds.s3.amazonaws.com/Screen+Shot+2021-09-17+at+10.35.18+AM.png)

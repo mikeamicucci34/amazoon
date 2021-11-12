@@ -21,7 +21,6 @@ export default class Search extends React.Component {
                
         const filteredProducts = () => {
             const searchTerm = this.props.searchQuery
-            // Tokenize the search terms and remove empty spaces
             const tokens = searchTerm
                         .toLowerCase()
                         .split(' ')
@@ -29,22 +28,19 @@ export default class Search extends React.Component {
                             return token.trim() !== '';
                         });
             if(tokens.length) {
-                //  Create a regular expression of all the search terms
-                const searchTermRegex = new RegExp(tokens.join('|'));
+                const searchTerm = new RegExp(tokens.join('|'));
                 const filteredList = this.props.products.filter( product => {
-                // Create a string of all object values
-                    let bookString = '';
+                    let searchString = '';
                      
                     for(const key in product) {
                         if (key !== 'description' && key !== 'photoUrl') {
                             if (product.hasOwnProperty(key) && product[key] !== '') {
-                            bookString += product[key].toString().toLowerCase().trim() + ' ';
+                            searchString += product[key].toString().toLowerCase().trim() + ' ';
                             }
                         }
                     }
                     
-                    // Return book objects where a match with the search regex if found
-                    return bookString.match(searchTermRegex)
+                    return searchString.match(searchTerm)
                     });
                 
                 return filteredList;

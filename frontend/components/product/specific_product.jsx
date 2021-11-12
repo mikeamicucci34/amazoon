@@ -53,15 +53,15 @@ class SpecificProduct extends React.Component {
 
     // flag to indicate whether an object is present in the current cart
     checkCartContent() {
-        let variable = false;
+        let varr = false;
         this.props.cartItems.forEach((cartItem) => {
             if (cartItem.product_id === this.props.product.id) {
-                variable = true;
+                varr = true;
             } else {
                 false;
             }
         });
-        return variable;
+        return varr;
     }
 
 
