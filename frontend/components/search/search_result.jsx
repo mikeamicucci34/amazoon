@@ -21,15 +21,15 @@ export default class Search extends React.Component {
                
         const filteredProducts = () => {
             const searchTerm = this.props.searchQuery
-            const tokens = searchTerm
-                        .toLowerCase()
-                        .split(' ')
-                        .filter(function(token){
-                            return token.trim() !== '';
-                        });
-            if(tokens.length) {
-                const searchTerm = new RegExp(tokens.join('|'));
-                const filteredList = this.props.products.filter( product => {
+            const bits = searchTerm
+                .toLowerCase()
+                .split(' ')
+                .filter(function(bit){
+                    return bit.trim() !== '';
+                });
+            if(bits.length) {
+                const searchTerm = new RegExp(bits.join('|'));
+                const returnList = this.props.products.filter( product => {
                     let searchString = '';
                      
                     for(const key in product) {
@@ -43,7 +43,7 @@ export default class Search extends React.Component {
                     return searchString.match(searchTerm)
                     });
                 
-                return filteredList;
+                return returnList;
             }
             
         }
