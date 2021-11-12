@@ -32,6 +32,12 @@ class Cart extends React.Component {
     }
 
     render() {
+
+        const formatter = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            minimumFractionDigits: 2
+        })
         let totalCost = 0 
         this.props.items.forEach( item => {
             totalCost += (item.price * item.quantity)
@@ -75,12 +81,12 @@ class Cart extends React.Component {
                                 }
                             </div>
                             <div className="cart__componentSubtotal">
-                                <p> Subtotal ({totalQuantity} items): ${totalCost} </p>
+                                <p> Subtotal ({totalQuantity} items): {formatter.format(totalCost)} </p>
                             </div>
                         </div>
                         <div className="cart__componentCheckout">
                             <p>Your order qualifies for FREE Shipping. Choose this option at checkout. See details</p>
-                            <h3>Subtotal ({totalQuantity} items): ${totalCost}</h3>
+                            <h3>Subtotal ({totalQuantity} items): {formatter.format(totalCost)}</h3>
                             <div className="cart__componentCheckoutButton">
                             {this.props.items.length >= 1 ? <button onClick={() => this.wipeCartItems()}>Checkout</button> : null }
                             </div>

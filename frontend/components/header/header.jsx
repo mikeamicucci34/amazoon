@@ -17,6 +17,10 @@ class Header extends React.Component {
         this.handleSearch = this.handleSearch.bind(this)
     }
 
+    componentDidMount() {
+        this.props.fetchCartItems();
+    }
+
     action() {
         return e => this.setState({ searchQuery: e.target.value })
     }
@@ -37,6 +41,13 @@ class Header extends React.Component {
         const linkto = (
             currentUser ? '/logout' : '/login'
         )
+
+debugger;
+
+        let totalQuantity = 0
+        this.props.items.forEach( item => {
+            totalQuantity += item.quantity
+        })
 
         return (
             <div className='header'>
@@ -95,6 +106,9 @@ class Header extends React.Component {
                             <Link to="/carts">
                             <p><ShoppingCartIcon className="header__optionBasket"/>
                                 Cart</p>
+                            <p className='header__cartCounter'>
+                                {totalQuantity}
+                            </p>  
                             </Link>
                         </span>
                     </div>

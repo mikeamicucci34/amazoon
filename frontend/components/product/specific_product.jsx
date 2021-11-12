@@ -1,6 +1,6 @@
 import { Button } from '@material-ui/core';
 import React from 'react'
-import Header from '../header/header'
+import HeaderContainer from '../header/header_container'
 import SubHeader from '../header/sub_header'
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 import LanguageIcon from '@material-ui/icons/Language';
@@ -116,7 +116,7 @@ class SpecificProduct extends React.Component {
         return (
             <>
                 <div>
-                    <Header {...this.props}/>
+                    <HeaderContainer {...this.props}/>
                 </div>
                 <div>
                     <SubHeader/>
