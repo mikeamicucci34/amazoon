@@ -74,7 +74,7 @@ class Signup extends React.Component {
                                         onChange={this.action("username")}/>
                                 
                                 {this.props.errors.length > 0 ? 
-                                    <div className="login__errors">
+                                    <div className="signup_errors">
                                     {errorsObject[keyWords[0]]}
                                     </div> : null}
                                 
@@ -84,7 +84,7 @@ class Signup extends React.Component {
                                         value={this.state.email}
                                         onChange={this.action("email")}/>
                                 {this.props.errors.length > 0 ? 
-                                    <div className="login__errors">
+                                    <div className="signup_errors">
                                     {errorsObject[keyWords[1]]}
                                     </div> : null}
 
@@ -94,7 +94,7 @@ class Signup extends React.Component {
                                         onChange={this.action("password")}/>
                                 <p>Passwords must be at least 6 characters.</p>
                                 {this.props.errors.length > 0 ? 
-                                    <div className="login__errors">
+                                    <div className="signup_errors">
                                     {errorsObject[keyWords[2]]}
                                     </div> : null}
 
