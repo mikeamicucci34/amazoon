@@ -14,7 +14,7 @@ Amazoon is a website where users can buy kindle books. (The product list is comp
 ## Technologies
 JavaScript , React / Redux , Ruby on Rails , postgreSQL , AWS , Heroku , Webpack, CSS3
 
-Amazoon is built using a Rails backend, PostgreSQL for the database management, jQuery/AJAX for database requests, React & Redux for the frontend / state management and CSS for the webpage styling. AWS S3 service used to store product images.
+Amazoon is built using a Rails backend, PostgreSQL for database management, jQuery/AJAX for database requests, React & Redux for frontend / state management and CSS for the webpage styling. AWS S3 service used to store product images.
 
 ## Features
 
